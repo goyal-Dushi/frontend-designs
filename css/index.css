@@ -1,0 +1,239 @@
+:root {
+  --dark-blue-2: rgb(12, 12, 29);
+  --purple: rgb(170, 92, 219);
+  --stat-heading: rgba(255, 255, 255, 0.6);
+  --body-para: rgba(255, 255, 255, 0.75);
+  --dark-blue-1: rgb(35, 28, 62);
+  --img-overlay: rgb(122, 66, 157, 0.75);
+  --main-font: "Lexend Deca", sans-serif;
+}
+
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9%;
+}
+
+.box-wrapper {
+  display: flex;
+  font-family: var(--main-font);
+  height: 600px;
+  width: 98%;
+}
+
+.box-text-section {
+  background-color: var(--dark-blue-1);
+  padding: 80px;
+  height: 100%;
+  border-radius: 15px 0px 0px 15px;
+  width: 50%;
+}
+
+.text-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-wrapper > h1 {
+  color: white;
+  padding-right: 10%;
+  font-weight: 600;
+  line-height: 1.15;
+  font-size: 3rem;
+}
+
+.text-wrapper h1 span {
+  color: var(--purple);
+}
+
+.text-wrapper > p {
+  color: var(--body-para);
+  font-size: 1.25rem;
+  line-height: 1.58;
+  padding-right: 25%;
+  margin-top: 8%;
+}
+
+.updates-container {
+  width: 100%;
+  padding-right: 20%;
+  height: 65px;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.update-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.update-text > h1 {
+  font-size: 2.1rem;
+  color: white;
+}
+
+.update-text p {
+  color: var(--stat-heading);
+  font-size: 1.05rem;
+}
+
+.box-img-section {
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 15px 15px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/image-header-desktop.jpg");
+}
+
+.img-overlay {
+  height: 100%;
+  width: 100%;
+  border-radius: 0px 15px 15px 0px;
+  background-color: var(--img-overlay);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1440px) {
+  .body-wrapper {
+    padding: 8%;
+  }
+  .box-wrapper {
+    width: 100%;
+    height: 500px;
+  }
+  .box-text-section {
+    padding: 70px;
+  }
+  .text-wrapper > h1 {
+    font-size: 2.5rem;
+    padding-right: 8%;
+  }
+  .text-wrapper > p {
+    padding-right: 8%;
+    font-size: 1.1rem;
+  }
+  .updates-container {
+    height: 60px;
+    margin-top: 20%;
+  }
+  .update-text > h1 {
+    font-size: 1.9rem;
+  }
+  .update-text > p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .updates-container {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .box-wrapper {
+    height: 400px;
+  }
+  .box-text-section {
+    padding: 50px;
+  }
+  .text-wrapper > h1 {
+    font-size: 1.8rem;
+    padding-right: 0;
+  }
+  .text-wrapper > p {
+    font-size: 0.9rem;
+    padding-right: 0%;
+  }
+  .update-text > h1 {
+    font-size: 1.4rem;
+  }
+  .update-text > p {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+  .updates-container {
+    margin-top: 22%;
+    height: 50px;
+  }
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 600px) {
+  .body-wrapper {
+    padding: 15% 5%;
+  }
+  .box-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+  }
+  .box-text-section {
+    height: fit-content;
+    width: 100%;
+    order: 1;
+    border-radius: 0px 0px 15px 15px;
+  }
+  .box-img-section {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .img-overlay {
+    border-radius: 15px 15px 0px 0px;
+  }
+  .text-wrapper {
+    justify-content: flex-start;
+  }
+  .text-wrapper > h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    padding-right: 0;
+    width: 95%;
+  }
+  .text-wrapper > p {
+    text-align: center;
+    font-size: 1.4rem;
+    width: 90%;
+  }
+  .updates-container {
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 8%;
+    text-align: center;
+  }
+  .update-text {
+    margin-top: 8%;
+  }
+  .update-text > h1 {
+    font-size: 2rem;
+  }
+  .update-text > p {
+    margin-top: 5%;
+  }
+}
