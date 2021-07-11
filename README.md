@@ -12,6 +12,8 @@ Thanks for checking out this front-end coding challenge.
 
 This is a solution to the [Stats preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+## Plese don't just fork the repo, do leave a STAR
+
 ## Table of contents
 
 - [Overview](#overview)
