@@ -4,18 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { data } from './cardsData';
 import Card from './components/common/Card';
 import StatsPreviewCard from './pages/StatsPreviewCard';
-import { BrowserRouter,Routes,Route , Link } from 'react-router-dom'
+import { HashRouter,Routes,Route } from 'react-router-dom'
 import Meta, { MetaProps } from './components/common/Meta';
 
 export const Main = () => {
   return (
     <>
-      <BrowserRouter basename='/frontend-designs' >
+      <HashRouter>
         <Routes>
-          <Route path='/frontend-designs' element={<App/>} />
+          <Route path='/' element={<App/>} />
           <Route path='/statsCardPreview' element={<StatsPreviewCard/>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
