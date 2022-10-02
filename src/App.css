@@ -1,0 +1,36 @@
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+
+.hover-body:hover{
+  box-shadow: 4px 6px 8px lightgray, -4px 0px 8px lightgray;
+  transition: all 0.5s ease-in-out;
+}
+
+.attribution {
+  font-size: 20px;
+  padding: 2% 0%;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
