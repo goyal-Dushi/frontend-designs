@@ -10,9 +10,9 @@ import Meta, { MetaProps } from './components/common/Meta';
 export const Main = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename='/frontend-designs' >
         <Routes>
-          <Route path='/' element={<App/>} />
+          <Route path='/frontend-designs' element={<App/>} />
           <Route path='/statsCardPreview' element={<StatsPreviewCard/>} />
         </Routes>
       </BrowserRouter>
