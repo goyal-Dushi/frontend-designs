@@ -2,7 +2,7 @@
   "name": "frontend-designs",
   "homepage": "https://goyal-Dushi.github.io/frontend-designs",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@types/node": "^16.11.62",
     "@types/react": "^18.0.21",
