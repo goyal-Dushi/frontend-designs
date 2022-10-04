@@ -122,6 +122,7 @@
 
 
 @media screen and (max-width: 1024px) {
+
   .boxWrapper {
     height: 400px;
   }
@@ -151,16 +152,17 @@
 
 /* MOBILE VIEW */
 @media screen and (max-width: 670px) {
-  .body-wrapper {
-    padding: 5% 15%;
+  .bodyWrapper {
+    padding: 8%;
     overflow-y: scroll;
+    height: 100%;
   }
   .boxWrapper {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: fit-content;
-    margin-top: 60%;
+    margin-top: 30%;
   }
   .textWrapper {
     height: fit-content;
@@ -211,14 +213,18 @@
 }
 
 @media screen and (max-width:450px) {
+  .bodyWrapper{
+    padding: 5%;
+  }
   .textWrapper{
     padding: 30px;
   }
 }
 
 @media screen and (max-width:380px) {
+
   .boxWrapper{
-    margin-top: 100%;
+    margin-top: 40%;
   }
 
   .updateText > h1 {
