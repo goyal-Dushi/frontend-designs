@@ -1,17 +1,19 @@
 {
-  "main.css": "/frontend-designs/static/css/main.661e30e1.chunk.css",
-  "main.js": "/frontend-designs/static/js/main.b81ffa3b.chunk.js",
-  "main.js.map": "/frontend-designs/static/js/main.b81ffa3b.chunk.js.map",
-  "runtime~main.js": "/frontend-designs/static/js/runtime~main.7a752ba6.js",
-  "runtime~main.js.map": "/frontend-designs/static/js/runtime~main.7a752ba6.js.map",
-  "static/css/2.6060c30a.chunk.css": "/frontend-designs/static/css/2.6060c30a.chunk.css",
-  "static/js/2.4fc8dae2.chunk.js": "/frontend-designs/static/js/2.4fc8dae2.chunk.js",
-  "static/js/2.4fc8dae2.chunk.js.map": "/frontend-designs/static/js/2.4fc8dae2.chunk.js.map",
-  "index.html": "/frontend-designs/index.html",
-  "precache-manifest.90f01fbfce49fdcc02f7364e6d0ffd1a.js": "/frontend-designs/precache-manifest.90f01fbfce49fdcc02f7364e6d0ffd1a.js",
-  "service-worker.js": "/frontend-designs/service-worker.js",
-  "static/css/2.6060c30a.chunk.css.map": "/frontend-designs/static/css/2.6060c30a.chunk.css.map",
-  "static/css/main.661e30e1.chunk.css.map": "/frontend-designs/static/css/main.661e30e1.chunk.css.map",
-  "static/media/index.css": "/frontend-designs/static/media/image-header-desktop.37a5b4c3.jpg",
-  "static/media/stats-card-preview.jpg": "/frontend-designs/static/media/stats-card-preview.645e63fd.jpg"
+  "files": {
+    "main.css": "/frontend-designs/static/css/main.7623aac0.css",
+    "main.js": "/frontend-designs/static/js/main.0dcee517.js",
+    "static/media/advice-generator.jpg": "/frontend-designs/static/media/advice-generator.bd372577d35c4ff20a55.jpg",
+    "static/media/stats-card-preview.jpg": "/frontend-designs/static/media/stats-card-preview.e63f461f1e1af3d3af88.jpg",
+    "static/media/image-header-desktop.jpg": "/frontend-designs/static/media/image-header-desktop.72d6e2a00c9131c7b6a6.jpg",
+    "index.html": "/frontend-designs/index.html",
+    "static/media/icon-dice.svg": "/frontend-designs/static/media/icon-dice.08691e4c24c11b5ba564e06b1f6bcbf3.svg",
+    "static/media/pattern-divider-desktop.svg": "/frontend-designs/static/media/pattern-divider-desktop.ed9685263f6b47d21c88.svg",
+    "static/media/pattern-divider-mobile.svg": "/frontend-designs/static/media/pattern-divider-mobile.aca38726412164df099c.svg",
+    "main.7623aac0.css.map": "/frontend-designs/static/css/main.7623aac0.css.map",
+    "main.0dcee517.js.map": "/frontend-designs/static/js/main.0dcee517.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7623aac0.css",
+    "static/js/main.0dcee517.js"
+  ]
 }
