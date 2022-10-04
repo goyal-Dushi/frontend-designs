@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import styles from './card.module.css';
 
 export interface CardProps {
     imgUrl: string;
@@ -12,12 +13,12 @@ const Card:React.FC<CardProps> = (props) => {
     const { cardUrl, imgUrl, title } = props;
 
     return(
-        <div className="card w-25">
+        <div className={`${styles.gridCard} card mx-auto`}>
             <img src={imgUrl} alt="stats-preview-card" className="card-img-top" />
-            <div className="card-body hover-body">
+            <div className={`${styles.hoverBody} card-body position-relative`}>
                 <h5 className="card-title text-capitalize"> {title} </h5>
                 <Link className="btn btn-primary" to={cardUrl} >
-                    <a> View </a>
+                    <span> View </span>
                 </Link>
             </div>
         </div>

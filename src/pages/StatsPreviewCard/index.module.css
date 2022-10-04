@@ -4,11 +4,11 @@
   --stat-heading: rgba(255, 255, 255, 0.6);
   --body-para: rgba(255, 255, 255, 0.75);
   --dark-blue-1: rgb(35, 28, 62);
-  --img-overlay: rgb(122, 66, 157, 0.75);
+  --imgOverlay: rgb(122, 66, 157, 0.75);
   --main-font: "Lexend Deca", sans-serif;
 }
 
-.body-wrapper {
+.bodyWrapper {
   width: 100%;
   height: 100vh;
   background-color: var(--dark-blue-2);
@@ -19,13 +19,13 @@
   padding: 0% 5%;
 }
 
-.box-wrapper {
+.boxWrapper {
   display: flex;
   font-family: var(--main-font);
   height: 550px;
 }
 
-.text-wrapper {
+.textWrapper {
   background-color: var(--dark-blue-1);
   padding: 80px;
   height: 100%;
@@ -38,25 +38,25 @@
   width: 50%;
 }
 
-.text-wrapper > h1 {
+.textWrapper > h1 {
   color: white;
   font-weight: 600;
   line-height: 1.15;
   font-size: 3rem;
 }
 
-.text-wrapper h1 span {
+.textWrapper h1 span {
   color: var(--purple);
 }
 
-.text-wrapper > p {
+.textWrapper > p {
   color: var(--body-para);
   font-size: 1.25rem;
   line-height: 1.58;
   margin-top: 8%;
 }
 
-.updates-container {
+.updatesContainer {
   width: 100%;
   height: 65px;
   margin: 20% auto 0%;
@@ -65,17 +65,17 @@
   justify-content: space-between;
 }
 
-.update-text > h1 {
+.updateText > h1 {
   font-size: 2.1rem;
   color: white;
 }
 
-.update-text p {
+.updateText p {
   color: var(--stat-heading);
   font-size: 1.05rem;
 }
 
-.box-img-section {
+.boxImgSection {
   width: 50%;
   height: 100%;
   border-radius: 0px 15px 15px 0px;
@@ -84,67 +84,66 @@
   background-image: url("../../images/statsPreviewCard/image-header-desktop.jpg");
 }
 
-.img-overlay {
+.imgOverlay {
   height: 100%;
   width: 100%;
   border-radius: 0px 15px 15px 0px;
-  background-color: var(--img-overlay);
+  background-color: var(--imgOverlay);
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1440px) {
   
-  .box-wrapper {
+  .boxWrapper {
     width: 100%;
     height: 500px;
   }
-  .text-wrapper {
+  .textWrapper {
     padding: 70px;
   }
-  .text-wrapper > h1 {
+  .textWrapper > h1 {
     font-size: 2.5rem;
     padding-right: 8%;
   }
-  .text-wrapper > p {
-    padding-right: 8%;
+  .textWrapper > p {
     font-size: 1.1rem;
   }
-  .updates-container {
+  .updatesContainer {
     height: 60px;
     margin-top: 20%;
   }
-  .update-text > h1 {
+  .updateText > h1 {
     font-size: 1.9rem;
   }
-  .update-text > p {
+  .updateText > p {
     font-size: 0.9rem;
   }
 }
 
 
 @media screen and (max-width: 1024px) {
-  .box-wrapper {
+  .boxWrapper {
     height: 400px;
   }
-  .text-wrapper {
+  .textWrapper {
     padding: 50px;
   }
-  .text-wrapper > h1 {
+  .textWrapper > h1 {
     font-size: 1.8rem;
     padding-right: 0;
   }
-  .text-wrapper > p {
+  .textWrapper > p {
     font-size: 0.9rem;
     padding-right: 0%;
   }
-  .update-text > h1 {
+  .updateText > h1 {
     font-size: 1.4rem;
   }
-  .update-text > p {
+  .updateText > p {
     font-size: 0.65rem;
     letter-spacing: 0.5px;
   }
-  .updates-container {
+  .updatesContainer {
     margin-top: 22%;
     height: 50px;
   }
@@ -156,14 +155,14 @@
     padding: 5% 15%;
     overflow-y: scroll;
   }
-  .box-wrapper {
+  .boxWrapper {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     height: fit-content;
     margin-top: 60%;
   }
-  .text-wrapper {
+  .textWrapper {
     height: fit-content;
     width: 100%;
     order: 1;
@@ -171,62 +170,62 @@
     justify-content: flex-start;
   }
 
-  .box-img-section {
+  .boxImgSection {
     width: 100%;
     height: 400px;
     background-size: cover;
     border-radius: 15px 15px 0px 0px;
   }
 
-  .img-overlay {
+  .imgOverlay {
     border-radius: 15px 15px 0px 0px;
   }
 
-  .text-wrapper > h1 {
+  .textWrapper > h1 {
     font-size: 1.8rem;
     text-align: center;
     padding-right: 0;
     width: 95%;
   }
-  .text-wrapper > p {
+  .textWrapper > p {
     text-align: center;
     font-size: 1rem;
     width: 90%;
   }
-  .updates-container {
+  .updatesContainer {
     flex-direction: column;
     height: fit-content;
     margin-top: 0%;
     text-align: center;
   }
-  .update-text {
+  .updateText {
     margin-top: 5%;
   }
-  .update-text > h1 {
+  .updateText > h1 {
     font-size: 1.4rem;
   }
-  .update-text > p {
+  .updateText > p {
     margin-top: 3%;
     margin-bottom: 0;
   }
 }
 
 @media screen and (max-width:450px) {
-  .text-wrapper{
+  .textWrapper{
     padding: 30px;
   }
 }
 
 @media screen and (max-width:380px) {
-  .box-wrapper{
+  .boxWrapper{
     margin-top: 100%;
   }
 
-  .update-text > h1 {
+  .updateText > h1 {
     font-size: 1.2rem;
   }
 
-  .text-wrapper > h1{
+  .textWrapper > h1{
     font-size: 1.5rem;
   }
 }
