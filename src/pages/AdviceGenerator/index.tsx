@@ -29,7 +29,7 @@ const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
         <div role={"main"} className={styles.mainWrapper} >
             <div className={styles.adviceBox}>
                 <span className={styles.adviceHeader}>
-                    Advice {data?.id}  
+                    Advice #{data?.id}  
                 </span>
                 {data?.advice ? (
                     <p className={styles.adviceBody}>
