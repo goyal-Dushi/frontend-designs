@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Meta, { MetaProps } from "../../components/common/Meta";
 import adviceIcon from '../../images/adviceGenerator/icon-dice.svg';
 import styles from './index.module.css';
 
@@ -7,6 +8,12 @@ export interface AdviceGeneratorProps {};
 type AdviceState = {
     id: number;
     advice: string;
+}
+
+const metaData: MetaProps = {
+    title: "Advice Generator App",
+    desc: "Advice Generator App using React js",
+    keywords: "Advice Generator, React App, Advice Generator React App, Generate Advice"
 }
 
 const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
@@ -26,6 +33,8 @@ const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
     }, []);
 
     return(
+        <>
+        <Meta {...metaData} />
         <div role={"main"} className={styles.mainWrapper} >
             <div className={styles.adviceBox}>
                 <span className={styles.adviceHeader}>
@@ -49,6 +58,7 @@ const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
                 </button>
             </div>
         </div>
+        </>
     )
 }
 
