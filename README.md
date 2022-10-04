@@ -23,7 +23,7 @@ In this repository, I maintain all my Frontendmentor.io challenges. Feel free to
 ### Links
 Including links to all the challenges that are present in the repo.
 
-- Live Site URL: [Add live site URL here](https://goyal-dushi.github.io/frontend-designs/)
+- Live Site URL: [Frontend Designs](https://goyal-dushi.github.io/frontend-designs/)
 
 ### Built with
 
