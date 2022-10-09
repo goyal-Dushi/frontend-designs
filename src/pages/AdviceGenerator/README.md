@@ -1,5 +1,7 @@
 # Front-end Style Guide for Advice Generator App
 
+### - [Solution Url](https://goyal-dushi.github.io/frontend-designs/#/adviceGenerator)
+
 ## Layout
 
 The designs were created to the following widths:
