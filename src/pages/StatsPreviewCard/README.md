@@ -1,4 +1,6 @@
-# Front-end Style Guide
+# Front-end Style Guide for Stats Preview Card Component
+
+### - [Solution url](https://goyal-dushi.github.io/frontend-designs/#/statsCardPreview)
 
 ## Layout
 
