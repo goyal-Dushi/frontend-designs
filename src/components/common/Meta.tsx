@@ -6,11 +6,12 @@ export interface MetaProps {
     desc: string;
     keywords: string;
     pgType? : string;
+    fontUrl?: string;
 };
 
 const Meta: React.FC<MetaProps> = (props) => {
 
-    const { desc, keywords, title, pgType } = props;
+    const { desc, keywords, title, pgType, fontUrl } = props;
     let iconUrl = '';
     if(pgType === 'main'){
         iconUrl = require('../../images/favicon.png')
@@ -30,6 +31,9 @@ const Meta: React.FC<MetaProps> = (props) => {
             <title> {title} </title>
             <meta name="description" content={desc} />
             <meta name="keywords" content={keywords} />
+            {fontUrl && (
+                <link rel="stylesheet" href={fontUrl} />
+            )}
         </Helmet>
     )
 }

@@ -7,7 +7,8 @@ export interface StatsPreviewCardProps { }
 const metaData:MetaProps = {
     title: 'Stats Preview Card Component',
     desc: 'Stats Preview component UI using React Js',
-    keywords: 'Stats Preview Card, Stats Card Component, Preview Card component'
+    keywords: 'Stats Preview Card, Stats Card Component, Preview Card component',
+    fontUrl: "https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap",
 }
 
 const StatsPreviewCard: React.FC<StatsPreviewCardProps> = () => {

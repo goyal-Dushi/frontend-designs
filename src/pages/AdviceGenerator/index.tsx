@@ -13,7 +13,8 @@ type AdviceState = {
 const metaData: MetaProps = {
     title: "Advice Generator App",
     desc: "Advice Generator App using React js",
-    keywords: "Advice Generator, React App, Advice Generator React App, Generate Advice"
+    keywords: "Advice Generator, React App, Advice Generator React App, Generate Advice",
+    fontUrl: "https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap"
 }
 
 const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
