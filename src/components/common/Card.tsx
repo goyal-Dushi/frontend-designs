@@ -17,7 +17,7 @@ const Card:React.FC<CardProps> = (props) => {
             <img src={imgUrl} alt="stats-preview-card" className="card-img-top" />
             <div className={`${styles.hoverBody} card-body position-relative`}>
                 <h5 className="card-title text-capitalize"> {title} </h5>
-                <Link className="btn btn-primary" to={cardUrl} >
+                <Link className="btn btn-outline-primary" to={cardUrl} >
                     <span> View </span>
                 </Link>
             </div>
