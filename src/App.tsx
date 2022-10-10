@@ -5,6 +5,7 @@ import { data } from './cardsData';
 import Card from './components/common/Card';
 import StatsPreviewCard from './pages/StatsPreviewCard';
 import AdviceGenerator from './pages/AdviceGenerator';
+import JobListing from './pages/JobListing';
 import { HashRouter,Routes,Route } from 'react-router-dom'
 import Meta, { MetaProps } from './components/common/Meta';
 
@@ -16,6 +17,7 @@ export const Main = () => {
           <Route path='/' element={<App/>} />
           <Route path='/statsCardPreview' element={<StatsPreviewCard/>} />
           <Route path='/adviceGenerator' element={<AdviceGenerator />} />
+          <Route path='/jobListing' element={<JobListing />} />
         </Routes>
       </HashRouter>
     </>
