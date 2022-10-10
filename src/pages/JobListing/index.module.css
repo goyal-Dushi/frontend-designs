@@ -1,0 +1,27 @@
+:root{
+    --dark-cyan: hsl(180, 29%, 50%);
+
+    --ligth-gray-cyan: hsl(180, 52%, 96%);
+    --dark-gray-cyan: hsl(180, 8%, 52%);
+    --ex-dark-gray-cyan: hsl(180, 14%, 20%);
+    --jobs-font: 'League Spartan';
+}
+
+.hero_bg{
+    height: 150px;
+    background-color: var(--dark-cyan);
+    background-repeat: no-repeat;
+    background-image: url('../../images/jobListing/bg-header-desktop.svg');
+}
+
+.jobs_body{
+    background-color: var(--ligth-gray-cyan);
+    padding: 5rem 0;
+    font-family: var(--jobs-font);
+}
+
+@media screen and (max-width:600px) {
+    .hero_bg{
+        background-image: url('../../images/jobListing/bg-header-mobile.svg');
+    }
+}
