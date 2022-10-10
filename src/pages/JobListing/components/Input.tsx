@@ -3,7 +3,7 @@ import styles from './input.module.css';
 import Tags from "./Tags";
 
 export interface InputProps {
-    setTags: React.Dispatch<React.SetStateAction<string[] | null>>;
+    setTags: React.Dispatch<React.SetStateAction<string[]>>;
     tags: string[]|null;
 }
 
@@ -35,9 +35,9 @@ const Input: React.FC<InputProps> = ({setTags, tags}) => {
             }
             let newTags:string[] = [];
             if(tags){
-                newTags = [...tags, inputVal];
-
+                newTags = [...tags, inputVal.trim()];
             }
+
             setTags(newTags);
             setLocalStorage(newTags);
             inputRef.current.value = '';
@@ -54,12 +54,12 @@ const Input: React.FC<InputProps> = ({setTags, tags}) => {
     }
 
     const handleClear = () => {
-        setTags(null);
-        setLocalStorage(null);
+        setTags([]);
+        setLocalStorage([]);
     }
 
     return(
-        <div className={`input-group my-auto position-absolute w-75 d-flex`} style={{ bottom: '-25px', height: '50px'}}>
+        <div className={`input-group my-auto position-absolute w-75 d-flex`} style={{ bottom: '-25px', height: '50px' }}>
             <div className="form-control" > 
                 {Boolean(tags?.length) && (
                     <div className="d-flex w-auto mb-2 flex-wrap">

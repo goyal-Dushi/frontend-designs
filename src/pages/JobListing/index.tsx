@@ -16,35 +16,35 @@ const metaData: MetaProps = {
 
 const JobListing:React.FC<JobListingProps> = () => {
 
-    const [searchTags, setSearchTags] = useState<string[]|null>(null);
+    const [searchTags, setSearchTags] = useState<string[]>([]);
     const [jobData, setJobData] = useState<JobCardProps[]>(data);
 
     useEffect(() => {
         if(!searchTags || !searchTags.length){
             setJobData(data);
-            return;
-        }
-        const initialData = [...data];
-        const newData = initialData.filter((vals) => {
-            const items = searchTags?.filter((name) => {
-                const lowerCaseName = name.toLowerCase();
-                if (vals.languages.find((language) => language.toLowerCase() === lowerCaseName)) {
-                    return vals;
-                }
-                if (vals.tools.find((tool) => tool.toLowerCase() === lowerCaseName)) {
-                    return vals;
-                }
-                if (vals.role.toLowerCase() === name || vals.level.toLowerCase() === lowerCaseName) {
-                    return vals;
+        }else{
+            const initialData = [...data];
+            const newData = initialData.filter((vals) => {
+                const items = searchTags?.filter((name) => {
+                    const lowerCaseName = name.toLowerCase();
+                    if (vals.languages.find((language) => language.toLowerCase() === lowerCaseName)) {
+                        return vals;
+                    }
+                    if (vals.tools.find((tool) => tool.toLowerCase() === lowerCaseName)) {
+                        return vals;
+                    }
+                    if (vals.role.toLowerCase() === name || vals.level.toLowerCase() === lowerCaseName) {
+                        return vals;
+                    }
+                    return null;
+                });
+                if (items.length) {
+                    return items;
                 }
                 return null;
             });
-            if(items.length){
-                return items;
-            }
-            return null;
-        });
-        setJobData(newData);
+            setJobData(newData);
+        }
     }, [searchTags]);
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const JobListing:React.FC<JobListingProps> = () => {
             <header className={styles.hero_bg}>
                 <div className="container-lg h-100 position-relative">
                     <Input tags={searchTags} setTags={setSearchTags} />
-                </div>  
+                </div>
             </header>
             <main className={`${styles.jobs_body}`}>
                 <div className="container-lg">
