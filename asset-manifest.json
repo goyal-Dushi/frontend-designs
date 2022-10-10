@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-designs/static/css/main.77a65a58.css",
-    "main.js": "/frontend-designs/static/js/main.983113a4.js",
+    "main.css": "/frontend-designs/static/css/main.bd061080.css",
+    "main.js": "/frontend-designs/static/js/main.18d90975.js",
     "static/media/advice-generator.jpg": "/frontend-designs/static/media/advice-generator.bd372577d35c4ff20a55.jpg",
     "static/media/stats-card-preview.jpg": "/frontend-designs/static/media/stats-card-preview.e63f461f1e1af3d3af88.jpg",
     "static/media/job-listing.jpg": "/frontend-designs/static/media/job-listing.2e7dcf875de0b589bbdd.jpg",
@@ -22,11 +22,11 @@
     "static/media/icon-dice.svg": "/frontend-designs/static/media/icon-dice.08691e4c24c11b5ba564e06b1f6bcbf3.svg",
     "static/media/pattern-divider-desktop.svg": "/frontend-designs/static/media/pattern-divider-desktop.ed9685263f6b47d21c88.svg",
     "static/media/pattern-divider-mobile.svg": "/frontend-designs/static/media/pattern-divider-mobile.aca38726412164df099c.svg",
-    "main.77a65a58.css.map": "/frontend-designs/static/css/main.77a65a58.css.map",
-    "main.983113a4.js.map": "/frontend-designs/static/js/main.983113a4.js.map"
+    "main.bd061080.css.map": "/frontend-designs/static/css/main.bd061080.css.map",
+    "main.18d90975.js.map": "/frontend-designs/static/js/main.18d90975.js.map"
   },
   "entrypoints": [
-    "static/css/main.77a65a58.css",
-    "static/js/main.983113a4.js"
+    "static/css/main.bd061080.css",
+    "static/js/main.18d90975.js"
   ]
 }
