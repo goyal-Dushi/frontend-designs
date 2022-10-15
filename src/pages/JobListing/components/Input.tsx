@@ -12,30 +12,39 @@ const Input: React.FC<InputProps> = ({setTags, tags}) => {
     const [deletable, setDeletable] = useState<string>('');
     const inputRef = useRef<HTMLInputElement|null>(null);
 
-    const setLocalStorage = useCallback((vals: string[]|null) => {
+    const setLocalStorage = useCallback((vals: string[]) => {
         window.localStorage.setItem('tags', JSON.stringify(vals));
     }, []);
+
+    const validateTags = (inputVal: string|null): boolean => {
+        if(!inputVal){
+            return false;
+        }
+        const alreadyPresent = tags?.filter(
+            (tagName) => tagName.toLowerCase() === inputVal?.trim().toLowerCase());
+        if (alreadyPresent?.length) {
+            return false;
+        }
+        return true;
+    }
 
     const handleInput = (e: React.KeyboardEvent) => {
 
         let inputVal = inputRef.current && inputRef.current.value;
-        if(!inputVal?.trim()){
-            return;
+        if (inputVal?.includes(',')) {
+            inputVal = inputVal.slice(0, -1).trim();
         }
 
+        if(!validateTags(inputVal)){
+            return;
+        };
+
         const validKey = e.key === 'Enter' || e.key === ',';
+
         if(validKey && inputRef.current && inputVal){
-            
-            if(inputVal.includes(',')){
-                inputVal = inputVal.slice(0, -1);
-            }
-            const alreadyPresent = tags?.filter((tagName) => tagName.toLowerCase() === inputVal?.toLowerCase());
-            if (alreadyPresent?.length) {
-                return;
-            }
             let newTags:string[] = [];
             if(tags){
-                newTags = [...tags, inputVal.trim()];
+                newTags = [...tags, inputVal];
             }
 
             setTags(newTags);
@@ -59,7 +68,7 @@ const Input: React.FC<InputProps> = ({setTags, tags}) => {
     }
 
     return(
-        <div className={`input-group my-auto position-absolute w-75 d-flex`} style={{ bottom: '-25px', height: '50px' }}>
+        <div className={`${styles.tag_input_wrap} input-group my-auto position-absolute w-75 d-flex`}>
             <div className="form-control" > 
                 {Boolean(tags?.length) && (
                     <div className="d-flex w-auto mb-2 flex-wrap">

@@ -20,29 +20,26 @@ const JobListing:React.FC<JobListingProps> = () => {
     const [jobData, setJobData] = useState<JobCardProps[]>(data);
 
     useEffect(() => {
-        if(!searchTags || !searchTags.length){
+        if(!searchTags.length){
             setJobData(data);
         }else{
             const initialData = [...data];
             const newData = initialData.filter((vals) => {
-                const items = searchTags?.filter((name) => {
-                    const lowerCaseName = name.toLowerCase();
-                    if (vals.languages.find((language) => language.toLowerCase() === lowerCaseName)) {
-                        return vals;
-                    }
-                    if (vals.tools.find((tool) => tool.toLowerCase() === lowerCaseName)) {
-                        return vals;
-                    }
-                    if (vals.role.toLowerCase() === name || vals.level.toLowerCase() === lowerCaseName) {
-                        return vals;
-                    }
-                    return null;
-                });
-                if (items.length) {
-                    return items;
+                const { languages, tools, role, level } = vals;
+
+                const dataArr = [
+                    ...languages.map((lang) => lang.toLowerCase()), 
+                    ...tools.map((tool) => tool.toLowerCase()), 
+                    role.toLowerCase(), 
+                    level.toLowerCase()
+                ];
+                
+                if (searchTags.some(tags => dataArr.includes(tags.toLowerCase()))){
+                    return vals;
                 }
                 return null;
             });
+
             setJobData(newData);
         }
     }, [searchTags]);
