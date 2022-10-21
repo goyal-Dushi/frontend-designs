@@ -1,0 +1,117 @@
+:root{
+    --scissor-color-2: hsl(39, 74%, 43%);
+    --scissor-color-1: hsl(40, 84%, 53%);
+    --paper-color-1:  hsl(230, 89%, 65%);
+    --paper-color-2: hsl(230, 92%, 57%);
+    --rock-color-2: hsl(349, 78%, 40%);
+    --rock-color-1: hsl(349, 70%, 56%);
+    --lizard-color-1: hsl(261, 72%, 63%);
+    --lizard-color-2: hsl(261, 73%, 60%);
+    --spook-color-2: hsl(189, 59%, 53%);
+    --spook-color-1: hsl(189, 58%, 57%);
+
+    --rps-dark-text:  hsl(229, 25%, 31%);
+    --rps-score-text: hsl(229, 64%, 46%);
+    --rps-header-outline:hsl(217, 16%, 45%);
+
+    --rps-radial-gradient-1: #1f3756;
+    --rps-radial-gradient-2:#141539;
+
+    --rps-font-family:'Barlow Semi Condensed', sans-serif;
+}
+
+.game_wrapper{
+    background-image: radial-gradient(circle, #1f3756, #1b2e4f, #182648, #161d41, #141539);
+    font-family: var(--rps-font-family);
+}
+
+.game_header{
+    border: 5px solid var(--rps-header-outline);
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.game_wrapper footer{
+    text-align: right;
+}
+
+.score_box{
+    width: 150px;
+    height: 100%;
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    border: none;
+    padding: 5%;
+}
+
+.score_box > h3{
+    color: var(--rps-dark-text);
+    font-size: 3rem;
+}
+
+.score_header{
+    color: var(--rps-score-text);
+    letter-spacing: 2px;
+}
+
+.reset_btn{
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 30px;
+    color: var(--rock-color-1);
+    letter-spacing: 3px;
+}
+
+.rules_button{
+    border: 3px solid white;
+    background: transparent;
+    letter-spacing: 3px;
+    border-radius: 14px;
+    padding: 10px 30px;
+    font-size: 18px;
+    color: white;
+}
+
+@media screen and (max-width:992px) {
+    .game_wrapper footer{
+        text-align: center;
+        padding: 10% 0 0;
+    }
+
+    .score_box{
+        width: 100px;
+    }
+
+    .game_header img{
+        height: 80px;
+    }
+
+    .reset_btn{
+        padding: 4% 12%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .game_header{
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .game_wrapper footer{
+        padding: 5% 0 0;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .game_header img{
+        height: 60px;
+    }
+
+    .score_box{
+        width: 80px;
+        height: 80px;
+        padding: 1%;
+    }
+}

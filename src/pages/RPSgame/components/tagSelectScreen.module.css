@@ -1,0 +1,28 @@
+.tag_container{
+    height: 600px;
+    background-image: url('../../../images/rockPaperGame/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;
+}
+
+.paper_tag{
+    margin-right: 40px;
+}
+
+.scissor_tag{
+    margin-left: 40px;
+}
+
+.triangle_wrapper{
+    background-image: url('../../../images/rockPaperGame/bg-triangle.svg');
+    height: 500px;
+    width: 500px;
+}
+
+@media screen and (max-width:600px) {
+    .tag_container{
+        height: 400px;
+        background-size: 200px;
+    }
+}

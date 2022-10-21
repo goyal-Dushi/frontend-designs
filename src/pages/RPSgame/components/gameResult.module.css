@@ -1,0 +1,100 @@
+.result_container{
+    height: 600px;
+    padding-top: 70px;
+}
+
+.tag_heading_1, .tag_heading_2{
+    color: white;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.tag_area{
+    margin-top: 12%;
+}
+
+.game_stat_header{
+    font-size: 3rem;
+    color: white;
+}
+
+.play_again_btn{
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 30px;
+    color: var(--rock-color-1);
+    letter-spacing: 3px;
+}
+
+.gametag_placeholder{
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--rps-radial-gradient-2);
+    opacity: 0.5;
+    padding-top: 2%;
+}
+
+@media screen and (max-width:1024px) {
+    .play_again_btn{
+        padding: 8px 20px;
+    }
+
+    .game_stat_header{
+        font-size: 2rem;
+    }
+
+    .gametag_placeholder{
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .res_text_container{
+        height: 300px;
+    }
+
+    .game_stat_header{
+        font-size: 4rem;
+    }
+
+    .play_again_btn{
+        font-size: 1.2rem;
+        padding: 1% 5%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .tag_heading_1, .tag_heading_2{
+        font-size: 18px;
+    }
+
+    .gametag_placeholder{
+        height: 140px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .res_text_container{
+        height: 200px;
+    }
+
+    .result_container{
+        height: 500px;
+    }
+
+    .gametag_placeholder{
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:417px) {
+    .tag_heading_1{
+        margin-bottom: 28%;
+    }
+}
