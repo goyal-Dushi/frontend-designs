@@ -1,11 +1,14 @@
 {
   "files": {
-    "main.css": "/frontend-designs/static/css/main.bd061080.css",
-    "main.js": "/frontend-designs/static/js/main.18d90975.js",
+    "main.css": "/frontend-designs/static/css/main.4c825ba2.css",
+    "main.js": "/frontend-designs/static/js/main.6090b14c.js",
     "static/media/advice-generator.jpg": "/frontend-designs/static/media/advice-generator.bd372577d35c4ff20a55.jpg",
     "static/media/stats-card-preview.jpg": "/frontend-designs/static/media/stats-card-preview.e63f461f1e1af3d3af88.jpg",
+    "static/media/rps-game.jpg": "/frontend-designs/static/media/rps-game.7acd3f4d51e14655f9a9.jpg",
     "static/media/job-listing.jpg": "/frontend-designs/static/media/job-listing.2e7dcf875de0b589bbdd.jpg",
     "static/media/image-header-desktop.jpg": "/frontend-designs/static/media/image-header-desktop.72d6e2a00c9131c7b6a6.jpg",
+    "static/media/logo.svg": "/frontend-designs/static/media/logo.a4a2b39fefcdb6a1a8088c4dba8f3d93.svg",
+    "static/media/image-rules.svg": "/frontend-designs/static/media/image-rules.258b753fb6284dc8ae00c5b2fa7938c0.svg",
     "static/media/loop-studios.svg": "/frontend-designs/static/media/loop-studios.7778c957c5751d1502cc594d020e34ba.svg",
     "static/media/photosnap.svg": "/frontend-designs/static/media/photosnap.5a867c13a374d62b400f967f5469d0b1.svg",
     "static/media/manage.svg": "/frontend-designs/static/media/manage.5a528a9669728fb94c8cac60ad73882f.svg",
@@ -14,19 +17,23 @@
     "static/media/eyecam-co.svg": "/frontend-designs/static/media/eyecam-co.0abb14e8a292eed471d54c4bb0eee875.svg",
     "static/media/shortly.svg": "/frontend-designs/static/media/shortly.3c01b577742e2648f6f987e088368dd3.svg",
     "static/media/myhome.svg": "/frontend-designs/static/media/myhome.aaaaa430346f24f652d52f2f1fb2d5b8.svg",
+    "static/media/icon-paper.svg": "/frontend-designs/static/media/icon-paper.8b57a6b108c1b8ae82931a39b10f96a2.svg",
     "static/media/the-air-filter-company.svg": "/frontend-designs/static/media/the-air-filter-company.9b55f6443c39f7b79348bce1335fbc7d.svg",
     "static/media/bg-header-desktop.svg": "/frontend-designs/static/media/bg-header-desktop.752d0faf14c00c6fb55f.svg",
     "static/media/faceit.svg": "/frontend-designs/static/media/faceit.54a148ce9e8793ff767eb7ad09aa0f8a.svg",
+    "static/media/icon-scissors.svg": "/frontend-designs/static/media/icon-scissors.3b1a5d7eb0b2f1fd3e955865ec04d9ed.svg",
     "index.html": "/frontend-designs/index.html",
     "static/media/bg-header-mobile.svg": "/frontend-designs/static/media/bg-header-mobile.b7750a0c3e0c016763b9.svg",
+    "static/media/icon-rock.svg": "/frontend-designs/static/media/icon-rock.476e90a9646a87bb3645d2f09f4f7fba.svg",
     "static/media/icon-dice.svg": "/frontend-designs/static/media/icon-dice.08691e4c24c11b5ba564e06b1f6bcbf3.svg",
     "static/media/pattern-divider-desktop.svg": "/frontend-designs/static/media/pattern-divider-desktop.ed9685263f6b47d21c88.svg",
     "static/media/pattern-divider-mobile.svg": "/frontend-designs/static/media/pattern-divider-mobile.aca38726412164df099c.svg",
-    "main.bd061080.css.map": "/frontend-designs/static/css/main.bd061080.css.map",
-    "main.18d90975.js.map": "/frontend-designs/static/js/main.18d90975.js.map"
+    "static/media/bg-triangle.svg": "/frontend-designs/static/media/bg-triangle.77c6ca418d3751d8f717.svg",
+    "main.4c825ba2.css.map": "/frontend-designs/static/css/main.4c825ba2.css.map",
+    "main.6090b14c.js.map": "/frontend-designs/static/js/main.6090b14c.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd061080.css",
-    "static/js/main.18d90975.js"
+    "static/css/main.4c825ba2.css",
+    "static/js/main.6090b14c.js"
   ]
 }
