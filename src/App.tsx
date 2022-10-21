@@ -5,6 +5,7 @@ import { data } from './cardsData';
 import Card from './components/common/Card';
 import StatsPreviewCard from './pages/StatsPreviewCard';
 import AdviceGenerator from './pages/AdviceGenerator';
+import RPSpage from './pages/RPSgame';
 import JobListing from './pages/JobListing';
 import { HashRouter,Routes,Route } from 'react-router-dom'
 import Meta, { MetaProps } from './components/common/Meta';
@@ -18,6 +19,7 @@ export const Main = () => {
           <Route path='/statsCardPreview' element={<StatsPreviewCard/>} />
           <Route path='/adviceGenerator' element={<AdviceGenerator />} />
           <Route path='/jobListing' element={<JobListing />} />
+          <Route path='/rpsGamePage' element={<RPSpage />} />
         </Routes>
       </HashRouter>
     </>
@@ -48,9 +50,10 @@ function App() {
           })}
       </div>
         <footer className="attribution bottom-0 py-2 w-100">
-          Challenge by{' '}
+          {/* Challenge by{' '}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer"
-          >Frontend Mentor</a>. Coded by {' '}
+          >Frontend Mentor</a>.  */}
+          Coded by {' '}
           <a href="https://dushyantgoyal.herokuapp.com">Dushyant Goyal</a>.
         </footer>
     </main>
