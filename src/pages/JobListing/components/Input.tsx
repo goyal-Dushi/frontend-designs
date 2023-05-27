@@ -20,8 +20,7 @@ const Input: React.FC<InputProps> = ({setTags, tags}) => {
         if(!inputVal){
             return false;
         }
-        const alreadyPresent = tags?.filter(
-            (tagName) => tagName.toLowerCase() === inputVal?.trim().toLowerCase());
+        const alreadyPresent = tags?.filter((tagName) => tagName.toLowerCase() === inputVal?.trim().toLowerCase());
         if (alreadyPresent?.length) {
             return false;
         }
