@@ -1,0 +1,206 @@
+:root {
+    --primary-cyan: hsl(172, 67%, 45%);
+    --darkest-cyan: hsl(183, 100%, 15%);
+    --dark-gray-cyan: hsl(186, 14%, 43%);
+    --gray-cyan: hsl(184, 14%, 56%);
+    --light-gray-cyan: hsl(185, 41%, 84%);
+    --lightest-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+
+    --primary-font: 24px;
+    --primary-font-weight: 700;
+    --primary-font-family: 'Space Mono', monospace;
+}
+
+.tipWrapper {
+    background-color: var(--light-gray-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.tipWrapper>div:last-child {
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 30px;
+}
+
+.mainContainer {
+    font-family: var(--primary-font-family);
+    font-weight: var(--primary-font-weight);
+    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+
+/* INPUT AREA AND ACTION ITEM CSS */
+.inputArea {
+    width: 400px;
+    height: 100%;
+    background-color: inherit;
+    padding: 10px 30px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* removing arrows from input number */
+.inputArea input::-webkit-outer-spin-button,
+.inputArea input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputArea input[type=number] {
+    -moz-appearance: textfield;
+    background: var(--lightest-cyan) !important;
+    text-align: end;
+}
+
+.inputArea input:focus-visible {
+    box-shadow: none !important;
+}
+
+.inputArea span.inputIcon {
+    background: var(--lightest-cyan) !important;
+    border: none !important;
+}
+
+.inputArea input[id=tip]:focus {
+    outline: 2px solid var(--primary-cyan);
+}
+
+div[data-id=person]:focus-within {
+    border: 2px solid var(--primary-cyan);
+    border-radius: 4px !important;
+}
+
+div[data-id=person].error:focus-within {
+    border: 2px solid rgb(234, 74, 74);
+}
+
+div[data-id=bill]:focus-within {
+    border: 2px solid var(--primary-cyan);
+    border-radius: 4px !important;
+}
+
+div[data-id=bill].error:focus-within {
+    border: 2px solid rgb(234, 74, 74);
+}
+
+.formLabelError {
+    color: lightcoral;
+}
+
+.tipGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+}
+
+.tipBtn {
+    padding: 4px 30px;
+    font-size: 24px;
+    border: none;
+    background-color: var(--darkest-cyan);
+    color: hsl(189, 41%, 97%);
+    font-family: var(--primary-font-family);
+    border-radius: 8px;
+}
+
+.tipBtn:hover {
+    background-color: var(--light-gray-cyan);
+    color: var(--darkest-cyan);
+}
+
+.tipBtn.tipActive {
+    background-color: var(--primary-cyan) !important;
+    color: var(--darkest-cyan) !important;
+}
+
+
+/* RESULT AREA CSS */
+
+.resultArea {
+    width: 400px;
+    height: 100%;
+    background-color: var(--darkest-cyan);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resultArea .field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultArea .fieldLabel {
+    line-height: 20px;
+    color: var(--white);
+}
+
+.resultArea .fieldLabel span {
+    font-size: 12px;
+    color: var(--gray-cyan);
+}
+
+.resultArea .fieldLabel+div {
+    color: var(--primary-cyan);
+}
+
+.resetBtn {
+    background-color: var(--light-gray-cyan);
+    border: none;
+    border-radius: 8px;
+}
+
+
+/* TABLET VIEW  */
+@media screen and (max-width:992px) {
+    .mainContainer {
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+
+    .inputArea {
+        height: 300px;
+        padding: 0;
+    }
+
+    .resultArea {
+        height: 300px;
+        margin-top: 20px;
+    }
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width:500px) {
+    .inputArea {
+        width: 280px;
+    }
+
+    .resultArea {
+        width: 280px;
+    }
+
+    .tipBtn {
+        padding: 4px 18px;
+        font-size: 18px;
+    }
+
+    .tipWrapper>div {
+        padding: 18px;
+    }
+
+    .inputArea input[id=tip] {
+        font-size: 18px !important;
+    }
+}
