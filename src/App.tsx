@@ -9,6 +9,7 @@ import RPSpage from './pages/RPSgame';
 import JobListing from './pages/JobListing';
 import { HashRouter,Routes,Route } from 'react-router-dom'
 import Meta, { MetaProps } from './components/common/Meta';
+import TipGenerator from './pages/TipGenerator';
 
 export const Main = () => {
   return (
@@ -20,6 +21,7 @@ export const Main = () => {
           <Route path='/adviceGenerator' element={<AdviceGenerator />} />
           <Route path='/jobListing' element={<JobListing />} />
           <Route path='/rpsGamePage' element={<RPSpage />} />
+          <Route path='/tipGenerator' element={<TipGenerator/>} />
         </Routes>
       </HashRouter>
     </>
