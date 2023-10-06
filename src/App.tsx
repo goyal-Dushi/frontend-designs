@@ -56,7 +56,7 @@ function App() {
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer"
           >Frontend Mentor</a>.  */}
           Coded by {' '}
-          <a href="https://dushyantgoyal.herokuapp.com">Dushyant Goyal</a>.
+          <a href="https://dushyantgoyal.vercel.app/">Dushyant Goyal</a>.
         </footer>
     </main>
     </>

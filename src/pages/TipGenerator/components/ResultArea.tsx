@@ -13,7 +13,6 @@ const ResultArea: React.FC<ResultProps> = () => {
         if(context?.inputState){
             const { bill, person, tip } = context.inputState;
             if(bill && person){
-                console.log('bill: ', bill, ' person: ', person, ' tip: ', tip);
                 const tipVal = bill * (tip / 100)
                 return (tipVal / person).toFixed(2);
             } else {
