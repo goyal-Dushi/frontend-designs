@@ -1,109 +1,112 @@
-.game_icon{
-    height: 200px;
-    width: 200px;
-    border: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: none;
+.game_icon {
+  height: 200px;
+  width: 200px;
+  border: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
 }
 
-.icon_big_rock, 
-.icon_big_scissor, 
-.icon_big_paper{
-    height: 320px;
-    width: 320px;
+.icon_big_rock,
+.icon_big_scissor,
+.icon_big_paper {
+  height: 320px;
+  width: 320px;
 }
 
 .icon_big_rock .inner_coin_bg,
 .icon_big_paper .inner_coin_bg,
-.icon_big_scissor .inner_coin_bg
-{
-    border-top: 12px solid #cccccc;
+.icon_big_scissor .inner_coin_bg {
+  border-top: 12px solid #cccccc;
 }
 
-.inner_coin_bg{
-    height: 80%;
-    width: 80%;
-    border-radius: 50%;
-    background-color: #EEEEEE;
-    border-top: 8px solid #cccccc;
+.inner_coin_bg {
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  border-top: 8px solid #cccccc;
 }
 
-.inner_coin_bg img{
-    height: 60%;
+.inner_coin_bg img {
+  height: 60%;
 }
 
-.rps_paper_icon{
-    background: var(--paper-color-1);
-    border-bottom: 8px solid var(--paper-color-2);
+.rps_paper_icon {
+  background: var(--paper-color-1);
+  border-bottom: 8px solid var(--paper-color-2);
 }
 
 .icon_big_paper {
-    border-bottom: 12px solid var(--paper-color-2);
+  border-bottom: 12px solid var(--paper-color-2);
 }
 
-.rps_scissor_icon{
-    background: var(--scissor-color-1);
-    border-bottom: 8px solid var(--scissor-color-2);
+.rps_scissor_icon {
+  background: var(--scissor-color-1);
+  border-bottom: 8px solid var(--scissor-color-2);
 }
 
-.icon_big_scissor{
-    border-bottom: 12px solid var(--scissor-color-2);
+.icon_big_scissor {
+  border-bottom: 12px solid var(--scissor-color-2);
 }
 
-.rps_rock_icon{
-    background: var(--rock-color-1);
-    border-bottom: 8px solid var(--rock-color-2);
+.rps_rock_icon {
+  background: var(--rock-color-1);
+  border-bottom: 8px solid var(--rock-color-2);
 }
 
-.icon_big_rock{
-    border-bottom: 12px solid var(--rock-color-2);
+.icon_big_rock {
+  border-bottom: 12px solid var(--rock-color-2);
 }
 
+@media screen and (max-width: 768px) {
+  .icon_big_rock,
+  .icon_big_scissor,
+  .icon_big_paper {
+    height: 250px;
+    width: 250px;
+  }
 
-@media screen and (max-width:768px) {
+  .icon_big_rock .inner_coin_bg,
+  .icon_big_paper .inner_coin_bg,
+  .icon_big_scissor .inner_coin_bg {
+    border-top: 10px solid #cccccc;
+  }
 
-    .icon_big_rock, .icon_big_scissor, .icon_big_paper{
-        height: 250px;
-        width: 250px;
-    }
+  .icon_big_paper {
+    border-bottom: 10px solid var(--paper-color-2);
+  }
 
-    .icon_big_rock .inner_coin_bg , 
-    .icon_big_paper .inner_coin_bg, 
-    .icon_big_scissor .inner_coin_bg{
-        border-top: 10px solid #cccccc;
-    }
+  .icon_big_scissor {
+    border-bottom: 10px solid var(--scissor-color-2);
+  }
 
-    .icon_big_paper {
-        border-bottom: 10px solid var(--paper-color-2);
-    }
-
-    .icon_big_scissor{
-        border-bottom: 10px solid var(--scissor-color-2);
-    }
-
-    .icon_big_rock{
-        border-bottom: 10px solid var(--rock-color-2);
-    }
+  .icon_big_rock {
+    border-bottom: 10px solid var(--rock-color-2);
+  }
 }
 
-@media screen and (max-width:600px) {
-    .icon_big_rock, .icon_big_scissor, .icon_big_paper{
-        height: 180px;
-        width: 180px;
-    }
+@media screen and (max-width: 600px) {
+  .icon_big_rock,
+  .icon_big_scissor,
+  .icon_big_paper {
+    height: 180px;
+    width: 180px;
+  }
 
-    .game_icon{
-        height: 120px;
-        width: 120px;
-    }
+  .game_icon {
+    height: 120px;
+    width: 120px;
+  }
 }
 
-@media screen and (max-width:420px) {
-    .icon_big_rock, .icon_big_scissor, .icon_big_paper{
-        height: 140px;
-        width: 140px;
-    }
+@media screen and (max-width: 420px) {
+  .icon_big_rock,
+  .icon_big_scissor,
+  .icon_big_paper {
+    height: 140px;
+    width: 140px;
+  }
 }

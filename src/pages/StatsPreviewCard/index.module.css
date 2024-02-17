@@ -5,7 +5,7 @@
   --body-para: rgba(255, 255, 255, 0.75);
   --dark-blue-1: rgb(35, 28, 62);
   --imgOverlay: rgb(122, 66, 157, 0.75);
-  --main-font: "Lexend Deca", sans-serif;
+  --main-font: 'Lexend Deca', sans-serif;
 }
 
 .bodyWrapper {
@@ -81,7 +81,7 @@
   border-radius: 0px 15px 15px 0px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../images/statsPreviewCard/image-header-desktop.jpg");
+  background-image: url('../../images/statsPreviewCard/image-header-desktop.jpg');
 }
 
 .imgOverlay {
@@ -93,7 +93,6 @@
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1440px) {
-  
   .boxWrapper {
     width: 100%;
     height: 500px;
@@ -120,9 +119,7 @@
   }
 }
 
-
 @media screen and (max-width: 1024px) {
-
   .boxWrapper {
     height: 400px;
   }
@@ -212,18 +209,17 @@
   }
 }
 
-@media screen and (max-width:450px) {
-  .bodyWrapper{
+@media screen and (max-width: 450px) {
+  .bodyWrapper {
     padding: 5%;
   }
-  .textWrapper{
+  .textWrapper {
     padding: 30px;
   }
 }
 
-@media screen and (max-width:380px) {
-
-  .boxWrapper{
+@media screen and (max-width: 380px) {
+  .boxWrapper {
     margin-top: 40%;
   }
 
@@ -231,7 +227,7 @@
     font-size: 1.2rem;
   }
 
-  .textWrapper > h1{
+  .textWrapper > h1 {
     font-size: 1.5rem;
   }
 }

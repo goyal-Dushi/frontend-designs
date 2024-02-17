@@ -7,7 +7,7 @@ import StatsPreviewCard from './pages/StatsPreviewCard';
 import AdviceGenerator from './pages/AdviceGenerator';
 import RPSpage from './pages/RPSgame';
 import JobListing from './pages/JobListing';
-import { HashRouter,Routes,Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Meta, { MetaProps } from './components/common/Meta';
 import TipGenerator from './pages/TipGenerator';
 
@@ -16,49 +16,56 @@ export const Main = () => {
     <>
       <HashRouter>
         <Routes>
-          <Route path='/' element={<App/>} />
-          <Route path='/statsCardPreview' element={<StatsPreviewCard/>} />
-          <Route path='/adviceGenerator' element={<AdviceGenerator />} />
-          <Route path='/jobListing' element={<JobListing />} />
-          <Route path='/rpsGamePage' element={<RPSpage />} />
-          <Route path='/tipGenerator' element={<TipGenerator/>} />
+          <Route path="/" element={<App />} />
+          <Route path="/statsCardPreview" element={<StatsPreviewCard />} />
+          <Route path="/adviceGenerator" element={<AdviceGenerator />} />
+          <Route path="/jobListing" element={<JobListing />} />
+          <Route path="/rpsGamePage" element={<RPSpage />} />
+          <Route path="/tipGenerator" element={<TipGenerator />} />
         </Routes>
       </HashRouter>
     </>
-  )
-}
+  );
+};
 
 const metaData: MetaProps = {
-  title:'Frontend Designs',
-  desc:'Frontend Designs using React JS',
-  keywords:'UI designs using React, React Js Designs, Frontend Design using React',
-  pgType: 'main'
-}
+  title: 'Frontend Designs',
+  desc: 'Frontend Designs using React JS',
+  keywords:
+    'UI designs using React, React Js Designs, Frontend Design using React',
+  pgType: 'main',
+};
 
 function App() {
   return (
     <>
-    <Meta {...metaData} />
-    <main className="container">
-      <h1 className="display-5 text-center py-2 header"> FRONTEND DESIGNS </h1>
-      <div className="row">
+      <Meta {...metaData} />
+      <main className="container">
+        <h1 className="display-5 text-center py-2 header">
+          {' '}
+          FRONTEND DESIGNS{' '}
+        </h1>
+        <div className="row">
           {data.map((val) => {
             const { cardUrl, imgUrl, title, id } = val;
-            return(
-              <div key={id} className="col-xl-3 col-lg-4 col-md-6 col-sm-12 my-2">
-              <Card cardUrl={cardUrl} imgUrl={imgUrl} title={title} />
+            return (
+              <div
+                key={id}
+                className="col-xl-3 col-lg-4 col-md-6 col-sm-12 my-2"
+              >
+                <Card cardUrl={cardUrl} imgUrl={imgUrl} title={title} />
               </div>
-            )
+            );
           })}
-      </div>
+        </div>
         <footer className="attribution bottom-0 py-2 w-100">
           {/* Challenge by{' '}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer"
           >Frontend Mentor</a>.  */}
-          Coded by {' '}
+          Coded by{' '}
           <a href="https://dushyantgoyal.vercel.app/">Dushyant Goyal</a>.
         </footer>
-    </main>
+      </main>
     </>
   );
 }

@@ -1,12 +1,12 @@
-.rules_wrapper{
-    background: rgba(0, 0, 0, 0.3);
+.rules_wrapper {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.rules_text{
-    color: var(--rps-dark-text);
-    font-size: 2rem;
+.rules_text {
+  color: var(--rps-dark-text);
+  font-size: 2rem;
 }
 
-.tri_rules_img{
-    height: fit-content;
+.tri_rules_img {
+  height: fit-content;
 }
