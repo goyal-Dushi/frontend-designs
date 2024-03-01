@@ -39,7 +39,7 @@ const AdviceGenerator: React.FC<AdviceGeneratorProps> = () => {
   return (
     <>
       <Meta {...metaData} />
-      <div role={'main'} className={styles.mainWrapper}>
+      <div role="main" className={styles.mainWrapper}>
         <div className={styles.adviceBox}>
           <span className={styles.adviceHeader}>Advice #{data?.id}</span>
           {data?.advice ? (

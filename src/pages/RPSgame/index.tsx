@@ -1,17 +1,13 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import logo from '../../images/rockPaperGame/logo.svg';
 import styles from './index.module.css';
 import Meta, { MetaProps } from '../../components/common/Meta';
 import RulesDialog from './components/RulesDialog';
 import GameResult from './components/GameResult';
 import TagSelectScreen from './components/TagSelectScreen';
+import { ResultContext } from './context';
 
 export interface RPSpageProps {}
-
-export const ResultContext = createContext<{
-  result: string | null;
-  setResult: React.Dispatch<React.SetStateAction<string | null>>;
-} | null>(null);
 
 const metaData: MetaProps = {
   fontUrl:
@@ -26,6 +22,11 @@ const RPSpage: React.FC<RPSpageProps> = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [result, setResult] = useState<string | null>(null);
   const [score, setScore] = useState<number | null>(null);
+
+  const resultContextVal = useMemo(
+    () => ({ result, setResult }),
+    [result, setResult]
+  );
 
   useEffect(() => {
     const localScore = window.localStorage.getItem('score');
@@ -54,7 +55,11 @@ const RPSpage: React.FC<RPSpageProps> = () => {
               <img src={logo} alt="logo-header" />
             </div>
             <div className="col p-0 my-auto text-center">
-              <button onClick={handleReset} className={`${styles.reset_btn}`}>
+              <button
+                type="button"
+                onClick={handleReset}
+                className={`${styles.reset_btn}`}
+              >
                 {' '}
                 RESET{' '}
               </button>
@@ -64,11 +69,11 @@ const RPSpage: React.FC<RPSpageProps> = () => {
                 className={`${styles.score_box} float-end text-center d-flex flex-column justify-content-between`}
               >
                 <span className={`${styles.score_header}`}>SCORE</span>
-                <h3 className="m-0"> {score ? score : 0} </h3>
+                <h3 className="m-0"> {score || 0} </h3>
               </div>
             </div>
           </header>
-          <ResultContext.Provider value={{ result, setResult }}>
+          <ResultContext.Provider value={resultContextVal}>
             <main>
               {result ? (
                 <GameResult setScore={setScore} />
@@ -79,7 +84,11 @@ const RPSpage: React.FC<RPSpageProps> = () => {
             </main>
           </ResultContext.Provider>
           <footer className={`${styles.game_footer} w-100 bottom-0`}>
-            <button onClick={handleDialog} className={`${styles.rules_button}`}>
+            <button
+              type="button"
+              onClick={handleDialog}
+              className={`${styles.rules_button}`}
+            >
               RULES
             </button>
           </footer>

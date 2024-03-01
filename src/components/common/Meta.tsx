@@ -26,7 +26,7 @@ const Meta: React.FC<MetaProps> = (props) => {
       <meta name="description" content={desc} />
       <meta name="keywords" content={keywords} />
       {fontUrl && <link rel="stylesheet" href={fontUrl} />}
-      <link rel="icon" href={iconUrl} type={'image/png'} sizes={'32x32'} />
+      <link rel="icon" href={iconUrl} type="image/png" sizes="32x32" />
     </Helmet>
   );
 };

@@ -15,7 +15,7 @@ const RulesDialog: React.FC<RulesDialogProps> = (props) => {
       <div
         className={`modal fade modal-dialog-centered justify-content-center show ${styles.rules_wrapper}`}
         tabIndex={-1}
-        aria-modal={'true'}
+        aria-modal="true"
         role="dialog"
         id="modal"
       >
@@ -28,13 +28,13 @@ const RulesDialog: React.FC<RulesDialogProps> = (props) => {
                 className="btn-close"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-              ></button>
+              />
             </div>
             <div className="modal-body text-center">
               <img
                 className={styles.tri_rules_img}
                 src={basicRules}
-                alt={'rules'}
+                alt="rules"
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import styles from '../index.module.css';
 import ActionItem from './ActionItem';
@@ -10,14 +11,12 @@ export type InputState = {
   person: number;
 };
 
-const InputArea: React.FC<InputAreaProps> = (props) => {
-  return (
-    <div className={styles.inputArea}>
-      <ActionItem for="bill" />
-      <ActionItem for="tipInput" />
-      <ActionItem for="person" />
-    </div>
-  );
-};
+const InputArea: React.FC<InputAreaProps> = () => (
+  <div className={styles.inputArea}>
+    <ActionItem for="bill" />
+    <ActionItem for="tipInput" />
+    <ActionItem for="person" />
+  </div>
+);
 
 export default InputArea;

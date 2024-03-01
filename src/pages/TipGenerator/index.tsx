@@ -1,22 +1,21 @@
-import React, { createContext, useReducer } from 'react';
+/* eslint-disable import/no-cycle */
+import React, { useMemo, useReducer } from 'react';
 import styles from './index.module.css';
 import ResultArea from './components/ResultArea';
-import InputArea, { InputState } from './components/InputArea';
+import InputArea from './components/InputArea';
 import TipLogo from '../../images/tipGenerator/logo.svg';
-import { ActionType, initialState, reducer } from './Reducer/tipReducer';
+import { initialState, reducer } from './Reducer/tipReducer';
+import { BillContext } from './context';
 
 interface TipGeneratorProps {}
 
-export const BillContext = createContext<{
-  inputState: InputState;
-  updateInput: React.Dispatch<ActionType> | null;
-}>({
-  inputState: initialState,
-  updateInput: null,
-});
-
 const TipGenerator: React.FC<TipGeneratorProps> = () => {
   const [inputVals, dispatchVal] = useReducer(reducer, initialState);
+
+  const billContextVal = useMemo(
+    () => ({ inputState: inputVals, updateInput: dispatchVal }),
+    [inputVals, dispatchVal]
+  );
 
   return (
     <div className={styles.tipWrapper}>
@@ -25,9 +24,7 @@ const TipGenerator: React.FC<TipGeneratorProps> = () => {
       </div>
       <div>
         <div className={`container-sm p-0 ${styles.mainContainer}`}>
-          <BillContext.Provider
-            value={{ inputState: inputVals, updateInput: dispatchVal }}
-          >
+          <BillContext.Provider value={billContextVal}>
             <InputArea />
             <ResultArea />
           </BillContext.Provider>

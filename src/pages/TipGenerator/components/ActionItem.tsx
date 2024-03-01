@@ -1,8 +1,10 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useContext, useEffect, useState } from 'react';
 import DollarIconImg from '../../../images/tipGenerator/icon-dollar.svg';
 import PersonIconImg from '../../../images/tipGenerator/icon-person.svg';
 import styles from '../index.module.css';
-import { BillContext } from '..';
+import { BillContext } from '../context';
 import { useDebounce } from '../../../hooks/useDebounce';
 
 type ActionItemProps = {
@@ -15,6 +17,7 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
   const { for: forType } = props;
 
   const context = useContext(BillContext);
+  const { updateInput, inputState } = context;
 
   const [inputTipVal, setTipVal] = useState<number | string>('');
   const [inputBillVal, setBillVal] = useState<number | string>('');
@@ -50,7 +53,7 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
         person: contextPerson,
         tip: contextTip,
       } = context.inputState;
-      // reset condn handled here
+
       if (contextBill === 0 && contextPerson === 0 && contextTip === 0) {
         if (inputBillVal !== 0) {
           setBillVal('');
@@ -69,8 +72,6 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
   if (!context) {
     return null;
   }
-
-  const { updateInput, inputState } = context;
 
   const handleTip = (e: React.SyntheticEvent) => {
     const curTipVal = e.currentTarget.getAttribute('value');
@@ -118,8 +119,8 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
             Bill{' '}
           </label>
           {inputBillVal === 0 && (
-            <label htmlFor="" className={styles.formLabelError}>
-              Can't be zero
+            <label htmlFor="bill" className={styles.formLabelError}>
+              Can&apos;t be zero
             </label>
           )}
         </div>
@@ -157,7 +158,7 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
           {inputPersonVal === 0 && (
             <label htmlFor="people" className={styles.formLabelError}>
               {' '}
-              Can't be zero{' '}
+              Can&apos;t be zero{' '}
             </label>
           )}
         </div>
@@ -188,24 +189,22 @@ const ActionItem: React.FC<ActionItemProps> = (props) => {
         <div>
           <div className="col px-0">
             {' '}
-            <label> Select Tip % </label>{' '}
+            <label htmlFor="tip"> Select Tip % </label>{' '}
           </div>
         </div>
         <div className={`${styles.tipGrid} mt-2`}>
-          {TIP_VALS.map((tip) => {
-            return (
-              <button
-                key={`${tip}%`}
-                type="button"
-                onClick={handleTip}
-                value={tip}
-                className={`${styles.tipBtn} ${tip === inputState.tip ? styles.tipActive : ''}`}
-                name="tip-val"
-              >
-                {tip}%
-              </button>
-            );
-          })}
+          {TIP_VALS.map((tip) => (
+            <button
+              key={`${tip}%`}
+              type="button"
+              onClick={handleTip}
+              value={tip}
+              className={`${styles.tipBtn} ${tip === inputState.tip ? styles.tipActive : ''}`}
+              name="tip-val"
+            >
+              {tip}%
+            </button>
+          ))}
           <input
             type="number"
             value={inputTipVal}

@@ -3,7 +3,7 @@ import rock from '../../../images/rockPaperGame/icon-rock.svg';
 import paper from '../../../images/rockPaperGame/icon-paper.svg';
 import scissor from '../../../images/rockPaperGame/icon-scissors.svg';
 import styles from './gametags.module.css';
-import { ResultContext } from '../index';
+import { ResultContext } from '../context';
 
 export interface GameTagProps {
   type: 'rock' | 'paper' | 'scissor';
@@ -19,6 +19,7 @@ const GameTags: React.FC<GameTagProps> = ({ type, classes, big }) => {
   let coinCss = '';
   let bigIcon = '';
 
+  // eslint-disable-next-line default-case
   switch (type) {
     case 'paper':
       imgUrl = paper;
@@ -42,21 +43,19 @@ const GameTags: React.FC<GameTagProps> = ({ type, classes, big }) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleIconClick}>
-        <input ref={inputRef} readOnly hidden value={type} />
-        <button
-          type="submit"
-          className={`${styles.game_icon} ${big && styles[bigIcon]} ${styles[coinCss]} ${classes} rounded-circle`}
+    <form onSubmit={handleIconClick}>
+      <input ref={inputRef} readOnly hidden value={type} />
+      <button
+        type="submit"
+        className={`${styles.game_icon} ${big && styles[bigIcon]} ${styles[coinCss]} ${classes} rounded-circle`}
+      >
+        <div
+          className={`${styles.inner_coin_bg} d-flex justify-content-center align-items-center`}
         >
-          <div
-            className={`${styles.inner_coin_bg} d-flex justify-content-center align-items-center`}
-          >
-            <img src={imgUrl} alt="gametag" />
-          </div>
-        </button>
-      </form>
-    </>
+          <img src={imgUrl} alt="gametag" />
+        </div>
+      </button>
+    </form>
   );
 };
 

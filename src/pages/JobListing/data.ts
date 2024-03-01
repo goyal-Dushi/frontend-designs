@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-
 import photosnap from '../../images/jobListing/photosnap.svg';
 import manage from '../../images/jobListing/manage.svg';
 import account from '../../images/jobListing/account.svg';
@@ -10,8 +8,9 @@ import shortly from '../../images/jobListing/shortly.svg';
 import insure from '../../images/jobListing/insure.svg';
 import eyecam from '../../images/jobListing/eyecam-co.svg';
 import airFilter from '../../images/jobListing/the-air-filter-company.svg';
+import { JobCardProps } from './components/JobCard';
 
-const data = [
+const data: JobCardProps[] = [
   {
     id: 1,
     company: 'Photosnap',

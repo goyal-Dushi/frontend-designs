@@ -31,20 +31,20 @@ const Tags: React.FC<TagProps> = (props) => {
   if (deleteArr?.length) {
     return (
       <>
-        {deleteArr.map((names, i) => {
-          return (
-            <div key={names + '-' + i} className={'me-2'}>
-              <div className={`${styles.deletable_tag} badge`}>{names}</div>
-              <button
-                onClick={() => handleDelete(names)}
-                className={styles.delete_icon}
-              >
-                {' '}
-                X{' '}
-              </button>
-            </div>
-          );
-        })}
+        {deleteArr.map((names, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <div key={`${names}-${i}`} className="me-2">
+            <div className={`${styles.deletable_tag} badge`}>{names}</div>
+            <button
+              type="button"
+              onClick={() => handleDelete(names)}
+              className={styles.delete_icon}
+            >
+              {' '}
+              X{' '}
+            </button>
+          </div>
+        ))}
       </>
     );
   }
@@ -54,7 +54,7 @@ const Tags: React.FC<TagProps> = (props) => {
       <>
         {languages.map((language, i) => (
           <div
-            key={i + '-' + language}
+            key={`${language}`}
             className={`${styles.skill_tag} badge mx-2 my-1`}
           >
             {language}

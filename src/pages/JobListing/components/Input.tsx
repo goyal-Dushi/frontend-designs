@@ -77,8 +77,7 @@ const Input: React.FC<InputProps> = ({ setTags, tags }) => {
           </div>
         )}
         <input
-          typeof={'input'}
-          type={'text'}
+          type="text"
           ref={inputRef}
           onKeyUp={handleInput}
           className="form-control"

@@ -20,6 +20,7 @@ export interface JobCardProps {
 
 const JobCard: React.FC<JobCardProps> = (props) => {
   const {
+    id,
     company,
     contract,
     featured,
@@ -34,9 +35,10 @@ const JobCard: React.FC<JobCardProps> = (props) => {
     tools,
   } = props;
 
-  const languageData: string[] = useMemo(() => {
-    return [role, level, ...languages, ...tools];
-  }, [languages, level, role, tools]);
+  const languageData: string[] = useMemo(
+    () => [role, level, ...languages, ...tools],
+    [languages, level, role, tools]
+  );
 
   return (
     <div className={`${styles.job_card} ${featured && styles.featured} mb-4`}>
@@ -65,9 +67,9 @@ const JobCard: React.FC<JobCardProps> = (props) => {
             className={`${styles.status_footer} d-flex align-items-center justify-content-between`}
           >
             <div> {postedAt} </div>
-            <span className={styles.dot_separator}></span>
+            <span className={styles.dot_separator} />
             <div className="text-capitalize"> {contract} </div>
-            <span className={styles.dot_separator}></span>
+            <span className={styles.dot_separator} />
             <div> {location} </div>
           </div>
         </div>

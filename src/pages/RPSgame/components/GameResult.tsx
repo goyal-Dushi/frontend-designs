@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
-import { ResultContext } from '..';
+import { ResultContext } from '../context';
 import styles from './gameResult.module.css';
 import GameTags, { GameTagProps } from './GameTags';
 
@@ -14,11 +14,9 @@ const solution = [
   [0, 2, -1],
 ];
 
-const rps_mapping = ['rock', 'paper', 'scissor'];
+const RpsMapping = ['rock', 'paper', 'scissor'];
 
-const getRandomRes = (max: number) => {
-  return Math.floor(Math.random() * max);
-};
+const getRandomRes = (max: number) => Math.floor(Math.random() * max);
 
 const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
   const context = useContext(ResultContext);
@@ -29,7 +27,7 @@ const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
     if (context?.result) {
       setTimeout(() => {
         const res = getRandomRes(3);
-        setHouseRes(rps_mapping[res]);
+        setHouseRes(RpsMapping[res]);
       }, 500);
     }
   }, [context?.result]);
@@ -37,19 +35,18 @@ const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
   useEffect(() => {
     if (houseRes) {
       setTimeout(() => {
-        const indexOfUserSoln = rps_mapping.indexOf(context?.result as string);
-        const computerSoln = rps_mapping.indexOf(houseRes);
+        const indexOfUserSoln = RpsMapping.indexOf(context?.result as string);
+        const computerSoln = RpsMapping.indexOf(houseRes);
         const final = solution[indexOfUserSoln][computerSoln];
         if (final === -1) {
           setWinText('DRAW');
           return;
         }
-        if (rps_mapping[final].trim() === houseRes.trim()) {
+        if (RpsMapping[final].trim() === houseRes.trim()) {
           setWinText('YOU LOSE');
-          return;
         } else {
           const score = window.localStorage.getItem('score');
-          let finalScore: number = 1;
+          let finalScore = 1;
           if (score) {
             finalScore = +score + 1;
           }
@@ -77,7 +74,7 @@ const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
           <div className={styles.tag_area}>
             <GameTags
               big
-              classes={`mx-auto`}
+              classes="mx-auto"
               type={context?.result as GameTagProps['type']}
             />
           </div>
@@ -89,6 +86,7 @@ const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
             <>
               <h4 className={styles.game_stat_header}> {winText} </h4>
               <button
+                type="button"
                 onClick={handlePlayAgain}
                 className={styles.play_again_btn}
               >
@@ -104,13 +102,13 @@ const GameResult: React.FC<GameResultProps> = ({ setScore }) => {
             {houseRes ? (
               <GameTags
                 big
-                classes={`mx-auto`}
+                classes="mx-auto"
                 type={houseRes as GameTagProps['type']}
               />
             ) : (
               <div
                 className={`${styles.gametag_placeholder} mx-auto my-auto`}
-              ></div>
+              />
             )}
           </div>
         </div>

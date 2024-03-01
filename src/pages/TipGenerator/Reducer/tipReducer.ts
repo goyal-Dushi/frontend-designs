@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { InputState } from '../components/InputArea';
 
 export const initialState: InputState = {
@@ -19,9 +20,10 @@ export const reducer = (state: InputState, action: ActionType) => {
       return { ...state, tip: action.value };
     case 'person':
       return { ...state, person: action.value };
-    case 'reset':
+    case 'reset': {
       const resetVal = action.value;
       return { bill: resetVal, tip: resetVal, person: resetVal };
+    }
     default:
       return { ...state };
   }

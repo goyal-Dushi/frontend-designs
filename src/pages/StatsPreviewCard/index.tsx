@@ -11,42 +11,40 @@ const metaData: MetaProps = {
   fontUrl: 'https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap',
 };
 
-const StatsPreviewCard: React.FC<StatsPreviewCardProps> = () => {
-  return (
-    <>
-      <Meta {...metaData} />
-      <div className={styles.bodyWrapper}>
-        <div className={styles.boxWrapper}>
-          <div className={styles.textWrapper}>
-            <h1>
-              Get<span> insights </span>that help your business grow.
-            </h1>
-            <p>
-              Discover the benefits of data analytics and make better decisions
-              regarding revenue, customer experience, and overall efficiency.
-            </p>
-            <div className={styles.updatesContainer}>
-              <div className={styles.updateText}>
-                <h1>10k+</h1>
-                <p>COMPANIES</p>
-              </div>
-              <div className={styles.updateText}>
-                <h1>314</h1>
-                <p>TEMPLATES</p>
-              </div>
-              <div className={styles.updateText}>
-                <h1>12M+</h1>
-                <p>QUERIES</p>
-              </div>
+const StatsPreviewCard: React.FC<StatsPreviewCardProps> = () => (
+  <>
+    <Meta {...metaData} />
+    <div className={styles.bodyWrapper}>
+      <div className={styles.boxWrapper}>
+        <div className={styles.textWrapper}>
+          <h1>
+            Get<span> insights </span>that help your business grow.
+          </h1>
+          <p>
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <div className={styles.updatesContainer}>
+            <div className={styles.updateText}>
+              <h1>10k+</h1>
+              <p>COMPANIES</p>
+            </div>
+            <div className={styles.updateText}>
+              <h1>314</h1>
+              <p>TEMPLATES</p>
+            </div>
+            <div className={styles.updateText}>
+              <h1>12M+</h1>
+              <p>QUERIES</p>
             </div>
           </div>
-          <div className={styles.boxImgSection}>
-            <div className={styles.imgOverlay}></div>
-          </div>
+        </div>
+        <div className={styles.boxImgSection}>
+          <div className={styles.imgOverlay} />
         </div>
       </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
 
 export default StatsPreviewCard;
