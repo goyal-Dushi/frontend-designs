@@ -10,6 +10,7 @@ import JobListing from './pages/JobListing';
 import RPSpage from './pages/RPSgame';
 import StatsPreviewCard from './pages/StatsPreviewCard';
 import TipGenerator from './pages/TipGenerator';
+import TodoApp from './pages/TodoApp';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',
@@ -54,6 +55,7 @@ export const Main: React.FC<MainProps> = () => (
       <Route path="/jobListing" element={<JobListing />} />
       <Route path="/rpsGamePage" element={<RPSpage />} />
       <Route path="/tipGenerator" element={<TipGenerator />} />
+      <Route path="/todo" element={<TodoApp />} />
     </Routes>
   </HashRouter>
 );
