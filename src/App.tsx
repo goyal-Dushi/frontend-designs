@@ -6,15 +6,15 @@ import { data } from './cardsData';
 import Card from './components/common/Card';
 import Meta, { MetaProps } from './components/common/Meta';
 import AdviceGenerator from './pages/AdviceGenerator';
-import CountriesSwitcher, {
-  CountriesSwitcherThemeContext,
-} from './pages/CountriesSwitcher';
 import CountryDetails from './pages/CountriesSwitcher/components/CountryDetails';
-import themeReducer from './pages/CountriesSwitcher/reducer/themeReducer';
+import themeReducer, {
+  CountriesSwitcherThemeContext,
+} from './pages/CountriesSwitcher/reducer/themeReducer';
 import JobListing from './pages/JobListing';
 import RPSpage from './pages/RPSgame';
 import StatsPreviewCard from './pages/StatsPreviewCard';
 import TipGenerator from './pages/TipGenerator';
+import CountriesSwitcher from './pages/CountriesSwitcher';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',

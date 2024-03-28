@@ -1,26 +1,19 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Meta, { MetaProps } from '../../components/common/Meta';
 import { CountryCardDetails } from './Type';
 import styles from './index.module.css';
 import './global.css';
 import CountryCard from './components/CountryCard';
-import DarkMode from '../../components/common/icons/DarkMode';
-import LightMode from '../../components/common/icons/LightMode';
 import PageLoader from '../../components/common/PageLoader';
-import { countriesSwiththemeInitialVal } from './reducer/themeReducer';
+import { useApi } from '../../hooks/useApi';
+import { useDebounce } from '../../hooks/useDebounce';
+import { CountriesSwitcherThemeContext } from './reducer/themeReducer';
+import ThemeHandler from './components/ThemeHandler';
+import SearchIcon from '../../components/common/icons/SearchIcon';
 
 interface CountriesSwitcherProps {}
-
-export const CountriesSwitcherThemeContext = createContext(
-  countriesSwiththemeInitialVal
-);
 
 const metaData: MetaProps = {
   fontUrl: 'https://fonts.google.com/specimen/Nunito+Sans',
@@ -29,39 +22,23 @@ const metaData: MetaProps = {
   keywords: 'REST API, Country details, About Countries',
 };
 
-const fetchData = async (api: string): Promise<any> => {
-  try {
-    const response = await fetch(api);
-    if (!response.ok) {
-      throw new Error('Failed to fetch data');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
-
 const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
   const [cardData, setCardData] = useState<CountryCardDetails[]>([]);
   const [countryName, setCountryName] = useState('');
   const [regionVal, setRegionVal] = useState<string>('');
-  // const [mode, setMode] = useState('light');
   const [loading, setLoading] = useState(false);
-  const { theme, dispatchTheme } = useContext(CountriesSwitcherThemeContext);
+  const context = useContext(CountriesSwitcherThemeContext);
+  const { theme } = context;
   const navigate = useNavigate();
   const [params] = useSearchParams();
+  const { fetchApiData } = useApi();
+  const debouncedInputVal = useDebounce(countryName, 800);
 
   const region = useMemo(() => params.get('region'), [params]);
 
   const handleInputChange = (e: React.SyntheticEvent) => {
     const { value } = e.currentTarget as HTMLInputElement;
-    setTimeout(async () => {
-      await fetchData(`https://restcountries.com/v3.1/name/${value}`).then(
-        (res) => setCardData(res)
-      );
-    }, 1000);
+    setCountryName(value);
   };
 
   const handleRegionSelect = async (e: React.SyntheticEvent) => {
@@ -69,107 +46,99 @@ const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
 
     setRegionVal(value);
 
-    // if (!value) {
-    //   setCardData(countriesData as unknown as CountryCardDetails[]);
-    //   return;
-    // }
-
-    navigate(`/countries?region=${value.toLocaleLowerCase()}`);
+    navigate(`/countries?region=${value.toLocaleLowerCase()}`, {
+      replace: true,
+    });
   };
 
-  const handleModeSwitch = () => {
-    if (theme === 'light') {
-      // setMode('dark');
-      dispatchTheme('dark');
+  const fetchAllCountriesData = async () => {
+    const res = await fetchApiData('https://restcountries.com/v3.1/all');
+    if (res.data) {
+      setCardData(res.data);
+    }
+  };
+
+  const fetchCountriesByRegion = async (endpoint: string) => {
+    if (endpoint === 'all') {
+      await fetchAllCountriesData();
       return;
     }
 
-    dispatchTheme('light');
-    // setMode('light');
+    const url = `https://restcountries.com/v3.1/region/${regionVal}`;
+    const res = await fetchApiData(url);
+    setCardData(res.data);
   };
 
   useEffect(() => {
-    const fetchDataForAllCountries = async () => {
+    (async () => {
       try {
         setLoading(true);
-        const jsonData = await fetchData('https://restcountries.com/v3.1/all');
-        setCardData(jsonData);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
 
-    if (!region) {
-      fetchDataForAllCountries();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const fetchDataForRegion = async () => {
-      try {
-        if (region) {
-          setLoading(true);
-          const jsonData = await fetchData(
-            `https://restcountries.com/v3.1/region/${region}`
+        if (debouncedInputVal) {
+          const res = await fetchApiData(
+            `https://restcountries.com/v3.1/name/${debouncedInputVal}`
           );
-
-          if (!regionVal) {
-            setRegionVal(region);
+          if (res.error) {
+            throw new Error(res.error);
           }
 
-          setCardData(jsonData);
+          setCardData(res.data);
+        } else if (regionVal) {
+          await fetchCountriesByRegion(regionVal);
+        } else {
+          await fetchAllCountriesData();
+        }
+
+        setLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedInputVal]);
+
+  useEffect(() => {
+    if (region) {
+      setRegionVal(region);
+    }
+  }, [region]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        if (regionVal) {
+          setLoading(true);
+          await fetchCountriesByRegion(regionVal);
           setLoading(false);
         }
       } catch (err) {
         console.error(err);
       }
-    };
-
-    if (region) {
-      fetchDataForRegion();
-    }
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [region]);
+  }, [regionVal]);
 
   return (
-    <>
+    <div className={`vh-100 countries-switcher-wrapper ${theme}-mode`}>
       <Meta {...metaData} />
       {loading && <PageLoader />}
-      <header className={`py-3 ${theme}-mode`}>
+      <header className={`py-3 ${theme}-mode shadow-sm mb-2`}>
         <div className="container d-flex align-items-center justify-content-between container-fluid">
           <h3>Where in the World?</h3>
-          <div>
-            <button
-              type="button"
-              onClick={handleModeSwitch}
-              className="border-0 btn"
-            >
-              {theme === 'light' ? (
-                <>
-                  <DarkMode /> <span> Dark Mode </span>
-                </>
-              ) : (
-                <>
-                  {' '}
-                  <LightMode /> <span> Light Mode </span>
-                </>
-              )}{' '}
-            </button>
-          </div>
+          <ThemeHandler />
         </div>
       </header>
       <main className={`${theme}-mode`}>
         <div className="overflow-hidden container container-fluid">
-          <div className="d-flex align-items-center justify-content-between">
+          <div className="d-flex align-items-center justify-content-between mt-4">
             <div className="input-group mb-3 w-50">
-              <span className="input-group-text" id="basic-addon1">
-                &#x1F50E;
-              </span>
+              <label htmlFor="country-name" className="input-group-text">
+                <SearchIcon />
+              </label>
               <input
                 type="text"
+                id="country-name"
+                name="country-name"
                 className="form-control"
                 placeholder="Search for a country ..."
                 onChange={handleInputChange}
@@ -182,11 +151,12 @@ const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
                 className="form-select form-select-md"
               >
                 <option value="">Filter by Region</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
+                <option value="all">All</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
               </select>
             </div>
           </div>
@@ -197,7 +167,7 @@ const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

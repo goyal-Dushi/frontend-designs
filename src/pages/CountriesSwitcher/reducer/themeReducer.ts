@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
 export type Any = any;
 
@@ -11,6 +11,10 @@ export const countriesSwiththemeInitialVal: ThemeInitialValI = {
   theme: 'light',
   dispatchTheme: null,
 };
+
+export const CountriesSwitcherThemeContext = createContext(
+  countriesSwiththemeInitialVal
+);
 
 const themeReducer: React.Reducer<string, string> = (theme, action) => {
   switch (action) {

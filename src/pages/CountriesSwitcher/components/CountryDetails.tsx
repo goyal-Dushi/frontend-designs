@@ -4,7 +4,7 @@ import { CountryCardDetails, borderMap } from '../Type';
 import './countryDetail.css';
 import PageLoader from '../../../components/common/PageLoader';
 import Meta, { MetaProps } from '../../../components/common/Meta';
-import { CountriesSwitcherThemeContext } from '..';
+import { CountriesSwitcherThemeContext } from '../reducer/themeReducer';
 
 export interface CountryDetailsProps {}
 
