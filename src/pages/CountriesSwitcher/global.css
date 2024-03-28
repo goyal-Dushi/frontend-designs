@@ -13,7 +13,8 @@
 
 
 main,
-header{
+header,
+div.countries-switcher-wrapper{
     font-family: var(--text-family);
     color: var(--text-light-mode);
     background-color: var(--bg-light);
@@ -25,7 +26,9 @@ main div.card, header{
 
 main.dark-mode,
 header.dark-mode,
-main.dark-mode main.country-details{
+div.countries-switcher-wrapper.dark-mode,
+main.dark-mode main.country-details
+{
     color: var(--text-dark-mode);
     background-color: var(--bg-dark);
 }
