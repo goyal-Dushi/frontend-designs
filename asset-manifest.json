@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/frontend-designs/static/css/main.967a4ebe.css",
-    "main.js": "/frontend-designs/static/js/main.4abefe2c.js",
+    "main.css": "/frontend-designs/static/css/main.1dfcfa29.css",
+    "main.js": "/frontend-designs/static/js/main.b1c2b2c9.js",
     "static/media/advice-generator.jpg": "/frontend-designs/static/media/advice-generator.bd372577d35c4ff20a55.jpg",
+    "static/media/rest_countries.jpg": "/frontend-designs/static/media/rest_countries.6b666592ca75e895bbb5.jpg",
     "static/media/stats-card-preview.jpg": "/frontend-designs/static/media/stats-card-preview.e63f461f1e1af3d3af88.jpg",
     "static/media/rps-game.jpg": "/frontend-designs/static/media/rps-game.7acd3f4d51e14655f9a9.jpg",
     "static/media/tip_calculator.jpg": "/frontend-designs/static/media/tip_calculator.e478e6ce31c9b771b88a.jpg",
@@ -32,11 +33,11 @@
     "static/media/pattern-divider-desktop.svg": "/frontend-designs/static/media/pattern-divider-desktop.ed9685263f6b47d21c88.svg",
     "static/media/pattern-divider-mobile.svg": "/frontend-designs/static/media/pattern-divider-mobile.aca38726412164df099c.svg",
     "static/media/bg-triangle.svg": "/frontend-designs/static/media/bg-triangle.77c6ca418d3751d8f717.svg",
-    "main.967a4ebe.css.map": "/frontend-designs/static/css/main.967a4ebe.css.map",
-    "main.4abefe2c.js.map": "/frontend-designs/static/js/main.4abefe2c.js.map"
+    "main.1dfcfa29.css.map": "/frontend-designs/static/css/main.1dfcfa29.css.map",
+    "main.b1c2b2c9.js.map": "/frontend-designs/static/js/main.b1c2b2c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.967a4ebe.css",
-    "static/js/main.4abefe2c.js"
+    "static/css/main.1dfcfa29.css",
+    "static/js/main.b1c2b2c9.js"
   ]
 }
