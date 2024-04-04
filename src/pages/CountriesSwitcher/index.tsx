@@ -119,7 +119,9 @@ const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
   }, [regionVal]);
 
   return (
-    <div className={`vh-100 countries-switcher-wrapper ${theme}-mode`}>
+    <div
+      className={`vh-100 overflow-scroll countries-switcher-wrapper ${theme}-mode`}
+    >
       <Meta {...metaData} />
       {loading && <PageLoader />}
       <header className={`py-3 ${theme}-mode shadow-sm mb-2`}>
@@ -150,7 +152,9 @@ const CountriesSwitcher: React.FC<CountriesSwitcherProps> = () => {
                 value={regionVal}
                 className="form-select form-select-md"
               >
-                <option value="">Filter by Region</option>
+                <option disabled value="">
+                  Filter by Region
+                </option>
                 <option value="all">All</option>
                 <option value="africa">Africa</option>
                 <option value="america">America</option>

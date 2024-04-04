@@ -65,10 +65,10 @@ const CountryDetails: React.FC<CountryDetailsProps> = () => {
   };
 
   return (
-    <>
+    <div className="vh-100 overflow-hidden">
       {loading && <PageLoader />}
       <Meta {...metaData} />
-      <main className={`country-details ${theme}-mode`}>
+      <main className={`country-details overflow-scroll ${theme}-mode`}>
         <div className="container container-fluid vh-100">
           <div className="row pt-5">
             <div className="col sm-12">
@@ -168,7 +168,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = () => {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
