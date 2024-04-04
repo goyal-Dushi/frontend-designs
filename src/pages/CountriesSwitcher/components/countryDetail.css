@@ -1,0 +1,41 @@
+@import '../global.css';
+
+.country-detail h4{
+    padding: 0 0.8rem;
+}
+
+.country-detail .container{
+    margin-top: 10px;
+}
+
+.country-detail .container .col-sm-12 p{
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+    .country-detail{
+        margin-top: 10%;
+    }
+
+    .country-detail h4{
+        padding: 0;
+    }
+
+    .country-detail .container{
+        margin-top: 8% !important;
+    }
+
+    .country-detail .container .col-sm-12 {
+        padding: 0;
+    }
+
+    .country-detail .container .col-sm-12 p{
+        margin-bottom: 4px;
+        font-size: 12px;
+    }
+
+    .country-detail .container .row .col-sm-12:nth-child(2){
+        margin-top: 5%;
+    }
+}

@@ -1,0 +1,22 @@
+.countryCardsArea{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 1024px){
+    .countryCardsArea{
+        column-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .countryCardsArea{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .countryCardsArea{
+        grid-template-columns: 1fr;
+    }
+}

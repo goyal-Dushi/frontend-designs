@@ -3,6 +3,7 @@ import adviceGenerator from './images/designs/advice-generator.jpg';
 import jobListing from './images/designs/job-listing.jpg';
 import rpsGameImg from './images/designs/rps-game.jpg';
 import tipCalcImg from './images/designs/tip_calculator.jpg';
+import restCountries from './images/designs/rest_countries.jpg';
 
 type CardData = {
   id: string | number;
@@ -41,5 +42,11 @@ export const data: CardData[] = [
     title: 'Splitter',
     cardUrl: '/tipGenerator',
     imgUrl: tipCalcImg,
+  },
+  {
+    id: '6',
+    title: 'REST Countries API',
+    cardUrl: '/countries',
+    imgUrl: restCountries,
   },
 ];
