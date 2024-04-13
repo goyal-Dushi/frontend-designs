@@ -30,6 +30,11 @@ Users should be able to:
 
 ### Screenshot
 
+![countries_light](https://github.com/goyal-Dushi/frontend-designs/assets/40212568/0b20f0e4-b21d-4ec7-973e-d5499240f0f2)
+
+![india](https://github.com/goyal-Dushi/frontend-designs/assets/40212568/d0606126-0fa7-42f6-9040-b8e25f0ba5e3)
+
+
 ### Links
 
 - [Live Site URL](https://goyal-dushi.github.io/frontend-designs/#/countries)
