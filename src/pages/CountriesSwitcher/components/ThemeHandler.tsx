@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import DarkMode from '../../../components/common/icons/DarkMode';
-import LightMode from '../../../components/common/icons/LightMode';
+import DarkMode from '../../../common/icons/DarkMode';
+import LightMode from '../../../common/icons/LightMode';
 import { CountriesSwitcherThemeContext } from '../reducer/themeReducer';
 
 export interface ThemeHandlerProps {}

@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import Meta, { MetaProps } from '../../components/common/Meta';
+import Meta, { MetaProps } from '../../common/components/Meta';
 import { CountryCardDetails } from './Type';
 import styles from './index.module.css';
 import './global.css';
 import CountryCard from './components/CountryCard';
-import PageLoader from '../../components/common/PageLoader';
+import PageLoader from '../../common/components/PageLoader';
 import { useApi } from '../../hooks/useApi';
 import { useDebounce } from '../../hooks/useDebounce';
 import { CountriesSwitcherThemeContext } from './reducer/themeReducer';
 import ThemeHandler from './components/ThemeHandler';
-import SearchIcon from '../../components/common/icons/SearchIcon';
+import SearchIcon from '../../common/icons/SearchIcon';
 
 interface CountriesSwitcherProps {}
 

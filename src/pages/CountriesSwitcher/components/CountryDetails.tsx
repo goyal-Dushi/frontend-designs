@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CountryCardDetails, borderMap } from '../Type';
 import './countryDetail.css';
-import PageLoader from '../../../components/common/PageLoader';
-import Meta, { MetaProps } from '../../../components/common/Meta';
+import PageLoader from '../../../common/components/PageLoader';
+import Meta, { MetaProps } from '../../../common/components/Meta';
 import { CountriesSwitcherThemeContext } from '../reducer/themeReducer';
 
 export interface CountryDetailsProps {}

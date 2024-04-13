@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import logo from '../../images/rockPaperGame/logo.svg';
 import styles from './index.module.css';
-import Meta, { MetaProps } from '../../components/common/Meta';
+import Meta, { MetaProps } from '../../common/components/Meta';
 import RulesDialog from './components/RulesDialog';
 import GameResult from './components/GameResult';
 import TagSelectScreen from './components/TagSelectScreen';

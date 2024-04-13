@@ -1,5 +1,5 @@
 import React from 'react';
-import Meta, { MetaProps } from '../../components/common/Meta';
+import Meta, { MetaProps } from '../../common/components/Meta';
 import styles from './index.module.css';
 
 export interface StatsPreviewCardProps {}

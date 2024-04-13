@@ -3,8 +3,8 @@ import React, { useMemo, useReducer } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { data } from './cardsData';
-import Card from './components/common/Card';
-import Meta, { MetaProps } from './components/common/Meta';
+import Card from './common/components/Card';
+import Meta, { MetaProps } from './common/components/Meta';
 import AdviceGenerator from './pages/AdviceGenerator';
 import CountryDetails from './pages/CountriesSwitcher/components/CountryDetails';
 import themeReducer, {

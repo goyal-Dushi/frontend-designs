@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Meta, { MetaProps } from '../../components/common/Meta';
+import Meta, { MetaProps } from '../../common/components/Meta';
 import Input from './components/Input';
 import JobCard, { JobCardProps } from './components/JobCard';
 import data from './data';

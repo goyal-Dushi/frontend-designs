@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Meta, { MetaProps } from '../../components/common/Meta';
+import Meta, { MetaProps } from '../../common/components/Meta';
 import adviceIcon from '../../images/adviceGenerator/icon-dice.svg';
 import styles from './index.module.css';
 
