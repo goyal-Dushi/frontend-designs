@@ -1,20 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useMemo, useReducer } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import './App.css';
 import { data } from './cardsData';
 import Card from './common/components/Card';
 import Meta, { MetaProps } from './common/components/Meta';
-import AdviceGenerator from './pages/AdviceGenerator';
-import CountryDetails from './pages/CountriesSwitcher/components/CountryDetails';
-import themeReducer, {
-  CountriesSwitcherThemeContext,
-} from './pages/CountriesSwitcher/reducer/themeReducer';
-import JobListing from './pages/JobListing';
-import RPSpage from './pages/RPSgame';
-import StatsPreviewCard from './pages/StatsPreviewCard';
-import TipGenerator from './pages/TipGenerator';
-import CountriesSwitcher from './pages/CountriesSwitcher';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',
@@ -48,38 +37,4 @@ const App: React.FC<AppProps> = () => (
   </>
 );
 
-interface MainProps {}
-
-export const Main: React.FC<MainProps> = () => {
-  const [theme, dispatchTheme] = useReducer(themeReducer, 'light');
-
-  const contextValue = useMemo(
-    () => ({ theme, dispatchTheme }),
-    [theme, dispatchTheme]
-  );
-
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/statsCardPreview" element={<StatsPreviewCard />} />
-        <Route path="/adviceGenerator" element={<AdviceGenerator />} />
-        <Route path="/jobListing" element={<JobListing />} />
-        <Route path="/rpsGamePage" element={<RPSpage />} />
-        <Route path="/tipGenerator" element={<TipGenerator />} />
-        <Route
-          path="/countries/*"
-          element={
-            // eslint-disable-next-line react/jsx-wrap-multilines
-            <CountriesSwitcherThemeContext.Provider value={contextValue}>
-              <Routes>
-                <Route path="/" element={<CountriesSwitcher />} />
-                <Route path=":country" element={<CountryDetails />} />
-              </Routes>
-            </CountriesSwitcherThemeContext.Provider>
-          }
-        />
-      </Routes>
-    </HashRouter>
-  );
-};
+export default App;
