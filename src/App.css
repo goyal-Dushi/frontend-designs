@@ -20,12 +20,3 @@
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

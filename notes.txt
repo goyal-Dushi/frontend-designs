@@ -1,0 +1,14 @@
+Rest country project
+
+-- Pages 
+    
+    1) country detail page :all info related to country
+    2) generic search page ( apply filter by region or search country )
+
+-- Technical requirements
+   
+   1) to filter by region, have the country mapped to region already stored!
+   2) search for country ( debouncing )
+   3) approximation filter for population ( M, B, K )
+   4) use global dark and light to style acc to mode
+   5) making mobile first view ( for better SEO )
