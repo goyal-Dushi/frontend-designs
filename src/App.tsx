@@ -1,16 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { data } from './cardsData';
-import Card from './components/common/Card';
-import Meta, { MetaProps } from './components/common/Meta';
 import AdviceGenerator from './pages/AdviceGenerator';
 import JobListing from './pages/JobListing';
 import RPSpage from './pages/RPSgame';
 import StatsPreviewCard from './pages/StatsPreviewCard';
 import TipGenerator from './pages/TipGenerator';
 import TodoApp from './pages/TodoApp';
+import Meta, { MetaProps } from './common/components/Meta';
+import Card from './common/components/Card';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',

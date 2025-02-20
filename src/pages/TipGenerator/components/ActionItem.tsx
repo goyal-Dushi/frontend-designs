@@ -5,7 +5,7 @@ import DollarIconImg from '../../../images/tipGenerator/icon-dollar.svg';
 import PersonIconImg from '../../../images/tipGenerator/icon-person.svg';
 import styles from '../index.module.css';
 import { BillContext } from '../context';
-import { useDebounce } from '../../../hooks/useDebounce';
+import { useDebounce } from '../../../common/hooks/useDebounce';
 
 type ActionItemProps = {
   for?: 'tipInput' | 'bill' | 'person';

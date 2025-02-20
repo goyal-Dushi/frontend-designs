@@ -1,0 +1,42 @@
+:root {
+    --bg-dark: hsl(209, 23%, 22%);
+    --bg-light: hsl(0, 0%, 98%);
+
+    --text-dark-mode:  hsl(0, 0%, 100%);
+    --text-light-mode: hsl(200, 15%, 8%); 
+
+    --element-dark : hsl(209, 23%, 22%);
+    --element-light: hsl(0, 0%, 100%);
+
+    --text-family :  "Nunito Sans", sans-serif;
+}
+
+
+main,
+header,
+div.countries-switcher-wrapper{
+    font-family: var(--text-family);
+    color: var(--text-light-mode);
+    background-color: var(--bg-light);
+}
+
+main div.card, header{
+    background-color: var(--element-light);
+}
+
+main.dark-mode,
+header.dark-mode,
+div.countries-switcher-wrapper.dark-mode,
+main.dark-mode main.country-details
+{
+    color: var(--text-dark-mode);
+    background-color: var(--bg-dark);
+}
+
+header.dark-mode .btn{
+    color: var(--text-dark-mode) !important;
+}
+
+main.dark-mode div.card{
+    background-color: var(--element-dark);
+}
