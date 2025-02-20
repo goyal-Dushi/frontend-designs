@@ -11,6 +11,7 @@ import TipGenerator from './pages/TipGenerator';
 import TodoApp from './pages/TodoApp';
 import Meta, { MetaProps } from './common/components/Meta';
 import Card from './common/components/Card';
+// import CountriesSwitcher from './pages/CountriesSwitcher';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',
@@ -46,7 +47,7 @@ const App: React.FC<AppProps> = () => (
 
 interface MainProps {}
 
-export const Main: React.FC<MainProps> = () => (
+const Main: React.FC<MainProps> = () => (
   <HashRouter>
     <Routes>
       <Route path="/" element={<App />} />
@@ -55,7 +56,10 @@ export const Main: React.FC<MainProps> = () => (
       <Route path="/jobListing" element={<JobListing />} />
       <Route path="/rpsGamePage" element={<RPSpage />} />
       <Route path="/tipGenerator" element={<TipGenerator />} />
+      {/* <Route path="/countries" element={<CountriesSwitcher />} /> */}
       <Route path="/todo" element={<TodoApp />} />
     </Routes>
   </HashRouter>
 );
+
+export default Main;
