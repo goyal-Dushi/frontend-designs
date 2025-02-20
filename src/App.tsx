@@ -1,9 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './App.css';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { data } from './cardsData';
-import Card from './common/components/Card';
+import AdviceGenerator from './pages/AdviceGenerator';
+import JobListing from './pages/JobListing';
+import RPSpage from './pages/RPSgame';
+import StatsPreviewCard from './pages/StatsPreviewCard';
+import TipGenerator from './pages/TipGenerator';
+import TodoApp from './pages/TodoApp';
 import Meta, { MetaProps } from './common/components/Meta';
+import Card from './common/components/Card';
 
 const metaData: MetaProps = {
   title: 'Frontend Designs',
@@ -37,4 +44,18 @@ const App: React.FC<AppProps> = () => (
   </>
 );
 
-export default App;
+interface MainProps {}
+
+export const Main: React.FC<MainProps> = () => (
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/statsCardPreview" element={<StatsPreviewCard />} />
+      <Route path="/adviceGenerator" element={<AdviceGenerator />} />
+      <Route path="/jobListing" element={<JobListing />} />
+      <Route path="/rpsGamePage" element={<RPSpage />} />
+      <Route path="/tipGenerator" element={<TipGenerator />} />
+      <Route path="/todo" element={<TodoApp />} />
+    </Routes>
+  </HashRouter>
+);
